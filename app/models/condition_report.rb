@@ -1,0 +1,2 @@
+class ConditionReport < ApplicationRecord
+end

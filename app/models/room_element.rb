@@ -1,0 +1,2 @@
+class RoomElement < ApplicationRecord
+end
