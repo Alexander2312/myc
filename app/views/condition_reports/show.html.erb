@@ -14,14 +14,12 @@
 
         <% room.room_elements.each do |element| %>
           <%= element.name %>
-          <% element.room_element_approvals.each do |approval| %>
-            Approval <%= approval.tenant_approval %>
-            Approval <%= approval.owner_approval %>
-          <% end %>
-          <% element.comments.each do |comment| %>
+
+          Comments
+           <% element.comments.each do |comment| %>
             <%= comment.text_comment %>
             <%= comment.state %>
-            <%= link_to "Add comment", new_room_element_comment_path(element), class: "btn btn-primary" %>
+
 
           <% end %>
         <% end %>
@@ -31,6 +29,6 @@
     </div>
   </div>
   <div class= "text-center">
-    <p> <%= link_to "Preview", condition_reports_path(@conditionreport), class: "btn btn-primary" %></p>
+    <p> <%= link_to "Confirm", condition_reports_path(@conditionreport), class: "btn btn-primary" %></p>
   </div>
 </div>
