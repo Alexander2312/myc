@@ -1,0 +1,28 @@
+<!-- edit.html.erb -->
+
+<div class="container">
+  <div class="room">
+
+    <div class="row">
+      <div class="col-md-10">
+      <% @rooms.each do |room| %>
+        <%= room.name %>
+        <div class="card"><% room.room_elements.each do |element| %>
+          <%= element.name %>
+          <%= element.room_element_approvals.tenant_approval %>
+          <%= element.room_element_approvals.owner_approval %>
+          <% element.comments.each do |comment| %>
+            <%= comment.text_comment %>
+            <%= comment.state %>
+            <%= cl_image_tag comment.photo %>
+          <% end %>
+        <% end %>
+      <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class= "text-center">
+    <p> <%= link_to "Preview", condition_reports_path(@conditionreport), class: "btn btn-primary" %></p>
+  </div>
+</div>
