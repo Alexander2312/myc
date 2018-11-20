@@ -10,18 +10,19 @@
           <p class="panel"><% room.room_elements.each do |element| %>
           <%= element.name %>
 
+
           Comments 💬
            <% element.comments.each do |comment| %>
             <%= comment.text_comment %>
             <%= comment.state %>
+
+              <% end %>
+            <% end %>
           <% end %>
-        <% end %>
-      <% end %>
-      </p>
+          </p>
       </div>
     </div>
-  </div>
   <div class= "text-center">
     <p> <%= link_to "Confirm", condition_reports_path(@conditionreport), class: "btn btn-primary" %></p>
   </div>
-</div>
+ </div>

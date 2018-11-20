@@ -15,6 +15,7 @@ class ConditionReportsController < ApplicationController
   end
 
   def create
+    raise
     @conditionreport = ConditionReport.new(conditionreport_params)
     @conditionreport.user = current_user
     @conditionreport.save

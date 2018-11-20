@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row">
     <div class="comment_form">
+
     <h1 class="text-center"> NEW COMMENT FOR <%= @room.room_element %></h1>
     <%= simple_form_for(@room_element, @comment) do |f| %>
+
     <%= f.input :text_comment, placeholder: "Type your comment here..." %>
-    <%= f.input :state, collection: ["Clean"], ["Working"], ["Undamaged"], prompt: "Select state" %>
+    <%= f.input :state, :collection => %w[Clean Working Undamaged] %>
     <%= f.input :photo, placeholder: "Please upload photo" %>
-    <%= f.input :photo_cache, as: :hidden %>
+    <!-- f.input :photo_cache, as: :hidden -->
     <%= f.button :submit, "Submit comment", class: "btn btn-primary"%>
+    <% end %>
     </div>
   </div>
 </div>
