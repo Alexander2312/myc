@@ -5,23 +5,20 @@
 
     <div class="row">
       <div class="col-md-10">
-      <% @rooms.each do |room| %>
-        <h3><%= room.name %></h3>
-          <p class="panel"><% room.room_elements.each do |element| %>
+      <% @room.each do |room| %>
+        <%= room.name %>
+        <div class="card"><% room.room_elements.each do |element| %>
           <%= element.name %>
-
-            <% element.room_element_approvals.each do |approval| %>
-              Tenant approval ✔️ <%= approval.tenant_approval %>
-              Owner approval ✔️ <%= approval.owner_approval %>
-            <% end %>
+          <%= element.room_element_approvals.tenant_approval %>
+          <%= element.room_element_approvals.owner_approval %>
           <% element.comments.each do |comment| %>
             <%= comment.text_comment %>
             <%= comment.state %>
-
+            <%= cl_image_tag comment.photo %>
           <% end %>
-          </p>
         <% end %>
       <% end %>
+      </div>
       </div>
     </div>
   </div>
