@@ -2,7 +2,7 @@
   <div class="row">
     <div class="comment_form">
     <h1 class="text-center"> NEW COMMENT FOR <%= @room.room_element %></h1>
-    <%= simple_form_for([@room_element, @comment) do |f| %>
+    <%= simple_form_for(@room_element, @comment) do |f| %>
     <%= f.input :text_comment, placeholder: "Type your comment here..." %>
     <%= f.input :state, collection: ["Clean"], ["Working"], ["Undamaged"], prompt: "Select state" %>
     <%= f.input :photo, placeholder: "Please upload photo" %>

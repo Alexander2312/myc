@@ -7,6 +7,7 @@ class ConditionReportsController < ApplicationController
 
   def show
     @conditionreport = ConditionReport.find(params[:id])
+    @rooms = @conditionreport.lease.property.rooms
   end
 
   def new
@@ -21,8 +22,9 @@ class ConditionReportsController < ApplicationController
   end
 
   def edit
-
+    @room = Room.find(params[:id])
     @conditionreport = ConditionReport.find(params[:id])
+    @rooms = @conditionreport.lease.property.rooms
   end
 
   def update
