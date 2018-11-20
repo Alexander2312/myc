@@ -18,6 +18,7 @@ property = Property.new(address: "666 sin st", square_meter: 999, furnished: tru
 jl.properties << property
 
 bedroom_one = Room.create(name: "bedroom 1", property_id: property.id)
+bedroom_two = Room.create(name: "bedroom 2", property_id: property.id)
 
 door = RoomElement.create(name: "door", room_id: bedroom_one.id)
 
