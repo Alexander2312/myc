@@ -21,8 +21,9 @@ class ConditionReportsController < ApplicationController
   end
 
   def edit
-
+    @room = Room.find(params[:id])
     @conditionreport = ConditionReport.find(params[:id])
+    @rooms = @conditionreport.lease.property.rooms
   end
 
   def update
