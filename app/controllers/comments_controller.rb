@@ -7,7 +7,8 @@ class CommentsController < ApplicationController
   def create
     @room_element = RoomElement.find(params[:room_element_id])
     @comment = Comment.new(comment_params)
-    @room_element.comment = @comment
+    @room_element.comment << @comment
+    @comment.save
   end
 
   private
