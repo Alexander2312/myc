@@ -42,9 +42,11 @@ ActiveRecord::Schema.define(version: 2018_11_20_032833) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.bigint "property_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["property_id"], name: "index_leases_on_property_id"
+    t.index ["user_id"], name: "index_leases_on_user_id"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -101,6 +103,7 @@ ActiveRecord::Schema.define(version: 2018_11_20_032833) do
   add_foreign_key "comments", "users"
   add_foreign_key "condition_reports", "leases"
   add_foreign_key "leases", "properties"
+  add_foreign_key "leases", "users"
   add_foreign_key "properties", "users"
   add_foreign_key "room_element_approvals", "condition_reports"
   add_foreign_key "room_element_approvals", "room_elements"
