@@ -6,29 +6,20 @@
     <div class="row">
       <div class="col-md-10">
       <% @rooms.each do |room| %>
-
-        <div class="text-center">
-        <h1><%= room.name %></h1>
-        </div>
-        <p class="panel">
-
-        <% room.room_elements.each do |element| %>
+        <h3><%= room.name %></h3>
+         <p class="panel"><% room.room_elements.each do |element| %>
           <%= element.name %>
-
-          Comments
+          Comments 💬
            <% element.comments.each do |comment| %>
             <%= comment.text_comment %>
             <%= comment.state %>
-
-
+              <% end %>
+            <% end %>
           <% end %>
-        <% end %>
-      <% end %>
-      </p>
+          </p>
       </div>
     </div>
-  </div>
   <div class= "text-center">
     <p> <%= link_to "Confirm", condition_reports_path(@conditionreport), class: "btn btn-primary" %></p>
   </div>
-</div>
+ </div>
