@@ -21,6 +21,7 @@ class ConditionReportsController < ApplicationController
   end
 
   def edit
+
     @conditionreport = ConditionReport.find(params[:id])
   end
 

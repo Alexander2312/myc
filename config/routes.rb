@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   resources :properties
 
 
-  resources :condition_report do
+  resources :condition_reports, except: [:destroy]
     # resources :rooms, only: [:new, :create]
-  end
+
 
   resources :rooms do
     resources :room_elements, only: [:new, :create]
