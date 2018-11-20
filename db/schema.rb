@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_19_061318) do
+ActiveRecord::Schema.define(version: 2018_11_20_032833) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,44 +18,70 @@ ActiveRecord::Schema.define(version: 2018_11_19_061318) do
   create_table "comments", force: :cascade do |t|
     t.string "text_comment"
     t.string "photo"
+    t.bigint "condition_report_id"
+    t.bigint "user_id"
+    t.bigint "room_element_id"
+    t.string "state"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["condition_report_id"], name: "index_comments_on_condition_report_id"
+    t.index ["room_element_id"], name: "index_comments_on_room_element_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "condition_reports", force: :cascade do |t|
-    t.datetime "date_of_creation"
-    t.datetime "date_of_update"
+    t.boolean "owner_signed", default: false
+    t.boolean "tenant_signed", default: false
+    t.bigint "lease_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["lease_id"], name: "index_condition_reports_on_lease_id"
   end
 
   create_table "leases", force: :cascade do |t|
     t.datetime "start_date"
     t.datetime "end_date"
+    t.bigint "property_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_leases_on_property_id"
   end
 
   create_table "properties", force: :cascade do |t|
     t.string "address"
     t.integer "square_meter"
-    t.boolean "furnished"
+    t.boolean "furnished", default: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_properties_on_user_id"
+  end
+
+  create_table "room_element_approvals", force: :cascade do |t|
+    t.boolean "tenant_approval", default: false
+    t.boolean "owner_approval", default: false
+    t.bigint "condition_report_id"
+    t.bigint "room_element_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["condition_report_id"], name: "index_room_element_approvals_on_condition_report_id"
+    t.index ["room_element_id"], name: "index_room_element_approvals_on_room_element_id"
   end
 
   create_table "room_elements", force: :cascade do |t|
     t.string "name"
-    t.string "text_comment"
-    t.boolean "approved"
+    t.bigint "room_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_room_elements_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
+    t.bigint "property_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["property_id"], name: "index_rooms_on_property_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,4 +96,14 @@ ActiveRecord::Schema.define(version: 2018_11_19_061318) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "condition_reports"
+  add_foreign_key "comments", "room_elements"
+  add_foreign_key "comments", "users"
+  add_foreign_key "condition_reports", "leases"
+  add_foreign_key "leases", "properties"
+  add_foreign_key "properties", "users"
+  add_foreign_key "room_element_approvals", "condition_reports"
+  add_foreign_key "room_element_approvals", "room_elements"
+  add_foreign_key "room_elements", "rooms"
+  add_foreign_key "rooms", "properties"
 end
