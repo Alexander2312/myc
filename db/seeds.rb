@@ -5,14 +5,38 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-room_elements = ["doors", "wall", "ceiling", "windows"]
-room_elements.each do |name|
-	RoomElement.create(name: name)
-end
 
-jl = User.create!(name: 'JL', email: 'tairtidhar01@gmail.com', password: 'password')
 
-CR1 = ConditionReport.new(date_of_creation: '16/08/88', date_of_update: '17/11/18')
-CR1.user = jl
-buddha.remote_photo_url = "https://images.unsplash.com/photo-1522850888141-ed8cb70c9c4d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5a340b46c4f4db95174cfe57d2730f72&auto=format&fit=crop&w=634&q=80"
-buddha.save
+require 'pry-byebug'
+
+
+
+
+
+
+jl = User.create(email: 'hi@gmail.com', password: 'password')
+property = Property.new(address: "666 sin st", square_meter: 999, furnished: true)
+
+jl.properties << property
+
+bedroom_one = Room.create(name: "bedroom 1", property_id: property.id)
+
+door = RoomElement.create(name: "door", room_id: bedroom_one.id)
+
+lease = Lease.create(user_id: jl.id, property_id: property.id, start_date: "16/08/88", end_date: "22/11/18")
+
+conditionreport1 = ConditionReport.create(owner_signed: false, tenant_signed: false, lease_id: lease.id)
+
+comment = Comment.create(text_comment: "hi", room_element_id: door.id, condition_report_id: conditionreport1.id, user_id: jl.id, state: "clean", photo: "hi")
+
+
+
+
+
+
+
+
+
+
+
+
