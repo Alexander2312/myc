@@ -4,6 +4,7 @@ class CreateProperties < ActiveRecord::Migration[5.2]
       t.string :address
       t.integer :square_meter
       t.boolean :furnished
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
