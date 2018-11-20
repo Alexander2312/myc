@@ -7,13 +7,19 @@ class CommentsController < ApplicationController
   def create
     @room_element = RoomElement.find(params[:room_element_id])
     @comment = Comment.new(comment_params)
-    @room_element.comment << @comment
-    @comment.save
+    @comment.room_element = @room_element
+    @comment.user_id = current_user.id
+    @comment.condition_report = ConditionReport.first
+    if @comment.save!
+      redirect_to root_path, notice: 'Your comment is now saved'
+    else
+      render :new
+    end
   end
 
   private
 
   def comment_params
-    params.require(:commment).permit(:text_comment, :state, :photo)
+    params.require(:comment).permit(:text_comment, :state, :photo)
   end
 end
