@@ -1,0 +1,25 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-md-offset-3">
+
+    <div class = "form-post">
+      <h2>Create a new Property</h2>
+        <%= simple_form_for @property do |f| %>
+        <div class="row">
+          <div class= "col-xs-6">
+          <%= f.input :address, placeholder: "Address of property" %>
+        </div>
+        <div class= "col-xs-6">
+          <%= f.input :square_meter, placeholder: "How many square meters is your property?"%>
+        </div>
+        <div class= "col-xs-6">    
+           <%= f.input :furnished %>
+        </div>
+
+        <div class= "col-xs-12">
+          <%= f.button :submit, "Create a property", class: "btn btn-primary" %>
+        <% end %>
+        </div>
+    </div>
