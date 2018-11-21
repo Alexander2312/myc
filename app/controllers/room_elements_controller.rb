@@ -10,7 +10,7 @@ class RoomElementsController < ApplicationController
 	@room_element = RoomElement.new(room_element_params)
   @room_element.room = @room
     if @room_element.save
-    redirect_to root_path, notice: 'The room element was successfully created!'
+    redirect_to condition_report_path, notice: 'The room element was successfully created!'
     else
     render :new
     end

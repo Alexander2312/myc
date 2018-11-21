@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :room_elements, only: [:new, :create]
   end
 
-
+  # This should be nested in condition reports 
   resources :room_elements, only: [:new, :create, :edit, :update, :destroy] do
     resources :comments, only: [:new, :create]
 
