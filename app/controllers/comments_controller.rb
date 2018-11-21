@@ -10,8 +10,10 @@ class CommentsController < ApplicationController
     @comment.room_element = @room_element
     @comment.user_id = current_user.id
     @comment.condition_report = ConditionReport.first
-    if @comment.save!
-      redirect_to root_path, notice: 'Your comment is now saved'
+
+    if @comment.save
+      ConfirmationMailer.confirm(@comment).deliver_now
+      redirect_to root_path, notice: 'Your comment has been saved 👏'
     else
       render :new
     end

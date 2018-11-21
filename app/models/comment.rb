@@ -3,6 +3,6 @@ class Comment < ApplicationRecord
   belongs_to :condition_report
   belongs_to :user
 
-  validates :state, presence: true
   mount_uploader :photo, PhotoUploader
+  validates :text_comment, presence: true, allow_blank: false
 end
