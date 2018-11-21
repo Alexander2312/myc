@@ -15,7 +15,7 @@
            <% element.comments.each do |comment| %>
             <%= comment.text_comment %>
             <%= comment.state %>
-
+            <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"rounded-image" %>
               <% end %>
             <% end %>
           <% end %>
@@ -26,3 +26,4 @@
     <p> <%= link_to "Confirm", condition_reports_path(@conditionreport), class: "btn btn-primary" %></p>
   </div>
  </div>
+

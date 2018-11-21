@@ -7,8 +7,9 @@
 
     <%= f.input :text_comment, placeholder: "Type your comment here..." %>
     <%= f.input :state, :collection => %w[Clean Working Undamaged] %>
-    <%= f.input :photo, placeholder: "Please upload photo" %>
-    <!-- f.input :photo_cache, as: :hidden -->
+   <!--  <%= f.input :photo, placeholder: "Please upload photo" %> -->
+   <!--  <%= f.input :photo_cache, as: :hidden %> -->
+    <input type="file" accept="image/*;capture=camera">
     <%= f.button :submit, "Submit comment", class: "btn btn-primary"%>
     <% end %>
     </div>
