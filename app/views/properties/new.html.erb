@@ -9,17 +9,17 @@
         <%= simple_form_for @property do |f| %>
         <div class="row">
           <div class= "col-xs-6">
-          <%= f.input :address, placeholder: "Address of property" %>
-        </div>
-        <div class= "col-xs-6">
-          <%= f.input :square_meter, placeholder: "How many square meters is your property?"%>
-        </div>
-        <div class= "col-xs-6">    
-           <%= f.input :furnished %>
-        </div>
-
-        <div class= "col-xs-12">
-          <%= f.button :submit, "Create a property", class: "btn btn-primary" %>
-        <% end %>
+            <%= f.input :address, placeholder: "Address of property" %>
+          </div>
+          <div class= "col-xs-6">
+            <%= f.input :square_meter, placeholder: "How many square meters?"%>
+          </div>
+          <div class= "col-xs-6">    
+             <%= f.input :furnished %>
+          </div>
+          <div class= "col-xs-12">
+            <%= f.button :submit, "Create a property", class: "btn btn-primary" %>
+          <% end %>
+          </div>
         </div>
     </div>

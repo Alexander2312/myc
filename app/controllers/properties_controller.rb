@@ -9,13 +9,11 @@ class PropertiesController < ApplicationController
 		@property = Property.new(property_params)
     @property.user = current_user
     if @property.save
-      redirect_to root_path, notice: 'The property was successfully created!'
+      redirect_to new_room_path, notice: 'The property was successfully created!'
     else
       render :new
     end
 	end
-
-
 
   private
 

@@ -1,0 +1,5 @@
+class RoomElementsApprovalsController < ApplicationController
+
+
+
+end
