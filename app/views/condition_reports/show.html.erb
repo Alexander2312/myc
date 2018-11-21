@@ -9,7 +9,16 @@
           <div class="panel">
             <% room.room_elements.each do |element| %>
               <h4> <%= element.name %> </h4>
-              Comments 💬
+
+                <div class = "approvals">
+                  <%= simple_form_for ([element, @room_element_approval]) do |f| %>
+                    <%= f.input :condition_report_id, as: :hidden%>
+                    <%= f.input :tenant_approval %>
+                    <%= f.input :owner_approval %>
+                  <% end %>
+                </div>
+
+            Comments 💬
               <% element.comments.each do |comment| %>
                 <div>
                   <%= comment.text_comment %>
