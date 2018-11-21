@@ -7,10 +7,12 @@
     <small id="commentHelpBlock" class="form-text text-muted">
     Add your comment here, include as much detail as possible.
     </small>
+
     <%= f.input :state, as: :check_boxes, collection: %w[Clean Working Undamaged], item_wrapper_class: 'inline' %>
    <!--  <%= f.input :photo, placeholder: "Please upload photo" %> -->
    <!--  <%= f.input :photo_cache, as: :hidden %> -->
     <input type="file" accept="image/*;capture=camera">
+
     <%= f.button :submit, "Submit comment", class: "btn btn-primary"%>
     <% end %>
     </div>
