@@ -7,4 +7,12 @@ class User < ApplicationRecord
   has_many :leases, dependent: :destroy
   has_many :properties, dependent: :destroy
   has_many :comments, dependent: :destroy
+
+  after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
 end
