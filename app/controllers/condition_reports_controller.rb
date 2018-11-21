@@ -9,6 +9,12 @@ class ConditionReportsController < ApplicationController
     @conditionreport = ConditionReport.find(params[:id])
     @rooms = @conditionreport.lease.property.rooms
     @room_element_approval = RoomElementApproval.new(condition_report_id: @conditionreport.id)
+    respond_to do |format|
+      format.html { render :show }
+      format.pdf {
+        render :pdf => "show", :layout => 'pdf.html'
+      }
+    end
   end
 
   def new
