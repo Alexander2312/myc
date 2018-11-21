@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :room_elements, only: [:new, :create, :edit, :update, :destroy] do
     resources :comments, only: [:new, :create]
 
-  resources :room_elements_approvals, only: [:new, :create]
+  resources :room_element_approvals, only: [:new, :create]
 
   end
 end

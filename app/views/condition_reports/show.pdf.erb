@@ -1,14 +1,17 @@
-<!-- show.html.erb -->
+<!-- show.pdf.erb -->
+<div>
+<h1 class= "text-center">
+    Your Flidow condition report
+</h1>
+</div>
 <div class="container">
   <div class="room">
     <div class="row">
 
       <div class="col-md-10">
-        <% @comments.room_elements.rooms.each do |room| %>
+        <% @rooms.each do |room| %>
           <h3><%= room.name %></h3>
           <div class="panel">
-
-
             <% room.room_elements.each do |element| %>
               <h4> <%= element.name %> </h4>
 
@@ -20,26 +23,18 @@
                   <% end %>
                 </div>
 
-            Comments 💬
+            Comments
               <% element.comments.each do |comment| %>
-
                 <div>
                   <%= comment.text_comment %>
                   <%= comment.state %>
-                 <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
+                  <%= cl_image_tag comment.photo, height: 300, width: 400, crop: :fill%>
                 </div>
               <% end %>
             <% end %>
           </div>
         <% end %>
       </div>
-
-      <div class= "text-center">
-        <p> <%= link_to "Confirm", condition_reports_path(@conditionreport), class: "btn btn-primary" %></p>
-        <p> <%= link_to "Download your PDF", "#{condition_reports_path(@conditionreport)}.pdf"  %>
-          </p>
-      </div>
-
     </div>
   </div>
 </div>
