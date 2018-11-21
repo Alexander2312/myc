@@ -2,48 +2,37 @@
 
 <div class="container">
   <div class="room">
-
     <div class="row">
       <div class="col-md-10">
-      <% @rooms.each do |room| %>
-        <h3><%= room.name %></h3>
-          <p class="panel"><% room.room_elements.each do |element| %>
-            <%= element.name %>
-            <% element.room_element_approvals.each do |approval| %>
-              Tenant approval ✔️ <%= approval.tenant_approval %>
-              Owner approval ✔️ <%= approval.owner_approval %>
-              <% end %>
-              <% element.comments.each do |comment| %>
-              <%= comment.text_comment %>
-              <%= comment.state %>
+        <% @rooms.each do |room| %>
+          <h3><%= room.name %></h3>
+          <div class="panel">
+            <% room.room_elements.each do |element| %>
+              <h4> <%= element.name %> </h4>
 
-
-              <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
-
-              <%= link_to "Add comment", new_room_element_comment_path(element), class: "btn btn-primary" %>
-
-
-              <div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                      <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                      </button>
-                      <%= cl_image_tag comment.photo, class: "imagepreview comment_picture" %>
-                    </div>
-                  </div>
+              <% element.room_element_approvals.each do |approval| %>
+                <div>
+                  Tenant approval ✔️ <%= approval.tenant_approval %>
+                  Owner   approval ✔️ <%= approval.owner_approval %>
                 </div>
-              </div>
+              <% end %>
+
+              <% element.comments.each do |comment| %>
+                <div>
+                  <%= comment.text_comment %>
+                  <%= comment.state %>
+                  <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
+                  <%= link_to "Add comment", new_room_element_comment_path(element), class: "btn btn-primary" %>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
-          </p>
+          </div>
         <% end %>
       </div>
+      <div class= "text-center">
+        <p><%= link_to "Preview", condition_reports_path(@conditionreport), class: "btn btn-primary" %></p>
+      </div>
     </div>
-    <div class= "text-center">
-    <p> <%= link_to "Preview", condition_reports_path(@conditionreport), class: "btn btn-primary" %></p>
   </div>
 </div>
 
