@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/pages/entry" => "pages#show", as: :entry
   get "/pages/kitchensink" => "pages#kitchensink", as: :kitchensink
+  get "/pages/confirmation" => "pages#confirmation", as: :confirmation
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :properties
 
