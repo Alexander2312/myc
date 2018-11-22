@@ -1,0 +1,17 @@
+$panel-radius: 10px;
+.panel {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: $panel-radius;
+  border: none;
+}
+.panel > .panel-heading {
+  border-top-right-radius: $panel-radius;
+  border-top-left-radius: $panel-radius;
+  background-color: transparent;
+  border: none;
+  padding: 15px;
+  padding-bottom: 0;
+}
+.panel-title {
+  font-size: 18px;
+}

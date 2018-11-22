@@ -22,7 +22,8 @@
                   <%= comment.text_comment %>
                   <%= comment.state %>
                   <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
-                  <%= link_to "Add comment", new_room_element_comment_path(element), class: "btn btn-primary" %>
+                  <i class="fas fa-comment-dots"><%= link_to "Add comment", new_room_element_comment_path(element), class: "btn btn-primary" %>
+                  </i>
                 </div>
               <% end %>
             <% end %>
