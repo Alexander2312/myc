@@ -6,7 +6,7 @@ class ConditionReportsController < ApplicationController
   end
 
   def show
-    @conditionreport = ConditionReport.find(params[:id])
+    @conditionreport = ConditionReport.find(paqrams[:id])
     @rooms = @conditionreport.lease.property.rooms
     @room_element_approval = RoomElementApproval.new(condition_report_id: @conditionreport.id)
     respond_to do |format|
