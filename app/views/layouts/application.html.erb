@@ -13,6 +13,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= yield :page_header %>
     <div class="container page-wrapper">
       <%= yield %>
     </div>
