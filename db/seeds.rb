@@ -97,6 +97,7 @@ slidingdoor = RoomElement.create(name: "Door", room_id: boiler_room.id)
 ceiling = RoomElement.create(name: "Ceiling", room_id: pool_room.id)
 walls = RoomElement.create(name: "Walls", room_id: pool_room.id)
 floor = RoomElement.create(name: "Floor", room_id: pool_room.id)
+lewagon = RoomElement.create(name: "Teachers and students", room_id: pool_room.id)
 
 ceiling = RoomElement.create(name: "Ceiling", room_id: green_room.id)
 walls = RoomElement.create(name: "Walls", room_id: green_room.id)
@@ -151,6 +152,20 @@ comment.save
 comment = Comment.create(text_comment: "Cute dogs running around everywhere", room_element_id: frontdesk.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "clean")
 comment.remote_photo_url = "https://images.unsplash.com/photo-1494801819652-1ca9fe13134c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41a38ea25d9615a1d36d7785ecff91bd&auto=format&fit=crop&w=634&q=80"
 comment.save
+
+comment = Comment.create(text_comment: "Cute students and teachers working late", room_element_id: lewagon.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "not clean working")
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878121/image2-2.jpg"
+comment.save
+
+comment = Comment.create(text_comment: "Almost empty bar fridge", room_element_id: barfridge.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "clean damaged")
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878566/image3.jpg"
+comment.save
+
+
+comment = Comment.create(text_comment: "Empty (as usual) reception desk", room_element_id: frontdesk.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "clean not working")
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878565/image4.jpg"
+comment.save
+
 
 puts "This is the end of this motherfucking seed file, snakes on a plane"
 
