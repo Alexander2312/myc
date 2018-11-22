@@ -6,6 +6,7 @@
     font-size: 18px;
     letter-spacing: 1px;
     font-weight: 300;
-    padding: 0 10px;
     min-width: 243px;
+    padding: 0;
+    line-height: $buttonSize - 12px;
   }
