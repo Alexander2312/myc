@@ -5,11 +5,14 @@ class PagesController < ApplicationController
   end
 
   def show
+
   end
 
   def kitchensink
   end
 
   def confirmation
+
+
   end
 end

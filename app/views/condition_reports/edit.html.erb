@@ -37,8 +37,15 @@
                   <%= comment.text_comment %>
                   <%= comment.state %>
                   <div class= "text-right"> <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
-                  <%= link_to new_room_element_comment_path(element) do %>
-                    <i class="fas fa-comment-dots"></i>
+                    <%= simple_form_for [@conditionreport, @comment], url:  new_condition_report_comment_path(@conditionreport), method: 'get' do |f| %>
+                      <%= hidden_field_tag 'room_element_id', element.id %>
+                      <%= button_tag type: 'submit' do %>
+                        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                      <% end %>
+
+                    <% end %>
+                  <%= link_to new_condition_report_comment_path(@conditionreport) do %>
+                    <i class=></i>
                   <% end %>
                   </div>
                 </div>
