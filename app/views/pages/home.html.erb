@@ -3,9 +3,9 @@
   <div class="row">
     <div class="col-sm-12 col-md-6 col-md-offset-3">
 
-	<a href="http://localhost:3000/users/sign_in" class="btn btn-primary">log in </a>
+	<%= link_to "Log in", user_session_path, class: "btn btn-primary"%>
 
-	<a href="http://localhost:3000/users/sign_up" class="btn btn-primary">sign up </a>
+	<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary"%>
 
 
 
