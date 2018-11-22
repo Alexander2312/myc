@@ -15,6 +15,11 @@ class PropertiesController < ApplicationController
     end
 	end
 
+  def index
+    @properties = Property.all
+  end
+
+
   private
 
   def property_params
