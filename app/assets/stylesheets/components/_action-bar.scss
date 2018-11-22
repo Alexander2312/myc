@@ -1,0 +1,18 @@
+.action-bar {
+  position: relative;
+  text-align:center;
+  padding: 30px 0;
+
+  .action-bar-button {
+    position: relative;
+    z-index: 1;
+  }
+  .action-bar-light-part {
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    right: -100px;
+    height: 50%;
+  }
+}

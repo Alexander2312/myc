@@ -28,7 +28,8 @@
                 <div>
                   <%= comment.text_comment %>
                   <%= comment.state %>
-                  <%= cl_image_tag comment.photo, height: 300, width: 400, crop: :fill%>
+                  <div class="text-right"> <%= cl_image_tag comment.photo, height: 300, width: 400, crop: :fill%>
+                  </div>
                 </div>
               <% end %>
             <% end %>

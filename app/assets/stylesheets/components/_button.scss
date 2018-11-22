@@ -1,5 +1,12 @@
- .btn-primary {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    border-radius: 30px;
+ $buttonSize: 72px;
+
+ .btn {
+    border-radius: $buttonSize / 2;
+    height: $buttonSize;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    min-width: 243px;
+    padding: 0;
+    line-height: $buttonSize - 12px;
   }

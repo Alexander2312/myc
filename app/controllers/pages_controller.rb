@@ -7,4 +7,7 @@ class PagesController < ApplicationController
   def show
   end
 
+  def kitchensink
+  end
+
 end
