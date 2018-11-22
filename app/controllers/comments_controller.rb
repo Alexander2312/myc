@@ -5,6 +5,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @condition_report = ConditionReport.find(params[:room_element_id])
     @room_element = RoomElement.find(params[:room_element_id])
     @comment = Comment.new(comment_params)
     @comment.room_element = @room_element
@@ -12,8 +13,8 @@ class CommentsController < ApplicationController
     @comment.condition_report = ConditionReport.first
 
     if @comment.save
-      ConfirmationMailer.confirm(@comment).deliver_now
-      redirect_to root_path, notice: 'Your comment has been saved 👏'
+      # ConfirmationMailer.confirm(@comment).deliver_now
+      redirect_to edit_condition_report_path(@condition_report), notice: 'Your comment has been saved 👏'
     else
       render :new
     end
