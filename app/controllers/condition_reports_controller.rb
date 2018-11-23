@@ -32,7 +32,7 @@ class ConditionReportsController < ApplicationController
     @comment = Comment.new
     @conditionreport = ConditionReport.find(params[:id])
     @rooms = @conditionreport.lease.property.rooms
-    @room_element_approval = RoomElementApproval.new(condition_report_id: @conditionreport.id, tenant_approval: true)
+    @room_element_approval = RoomElementApproval.new(condition_report_id: @conditionreport.id)
   end
 
   def update
