@@ -19,50 +19,50 @@ puts "This is where I fucking cleared all the data"
 
 jl = User.create(email: 'hi@gmail.com', password: 'password')
 
-property = Property.new(address: "666 Sin St, Melbourne", square_meter: 66.6, furnished: false)
+# property = Property.new(address: "666 Sin St, Melbourne", square_meter: 66.6, furnished: false)
 
-jl.properties << property
+# jl.properties << property
 
-lease = Lease.create(user_id: jl.id, property_id: property.id, start_date: "16/08/88", end_date: "22/11/18")
+# lease = Lease.create(user_id: jl.id, property_id: property.id, start_date: "16/08/88", end_date: "22/11/18")
 
-conditionreport1 = ConditionReport.create(owner_signed: false, tenant_signed: false, lease_id: lease.id)
+# conditionreport1 = ConditionReport.create(owner_signed: false, tenant_signed: false, lease_id: lease.id)
 
-puts "This is where I defined the lease and condition report, fucking"
+# puts "This is where I defined the lease and condition report, fucking"
 
-bedroom_one = Room.create(name: "Bedroom 1", property_id: property.id)
-bedroom_two = Room.create(name: "Bedroom 2", property_id: property.id)
-living = Room.create(name: "Living Area", property_id: property.id)
-kitchen = Room.create(name: "Kitchen", property_id: property.id)
-bathroom = Room.create(name: "Bathroom - main", property_id: property.id)
-ensuite = Room.create(name: "Ensuite", property_id: property.id)
+# bedroom_one = Room.create(name: "Bedroom 1", property_id: property.id)
+# bedroom_two = Room.create(name: "Bedroom 2", property_id: property.id)
+# living = Room.create(name: "Living Area", property_id: property.id)
+# kitchen = Room.create(name: "Kitchen", property_id: property.id)
+# bathroom = Room.create(name: "Bathroom - main", property_id: property.id)
+# ensuite = Room.create(name: "Ensuite", property_id: property.id)
 
-door = RoomElement.create(name: "Door", room_id: bedroom_one.id)
-floor = RoomElement.create(name: "Floor", room_id: bedroom_one.id)
-window = RoomElement.create(name: "Window", room_id: bedroom_one.id)
-ceiling = RoomElement.create(name: "Ceiling", room_id: bedroom_one.id)
-curtain = RoomElement.create(name: "Curtain - 2, black", room_id: bedroom_one.id)
-fan = RoomElement.create(name: "Fan - Ceiling", room_id: bedroom_one.id)
+# door = RoomElement.create(name: "Door", room_id: bedroom_one.id)
+# floor = RoomElement.create(name: "Floor", room_id: bedroom_one.id)
+# window = RoomElement.create(name: "Window", room_id: bedroom_one.id)
+# ceiling = RoomElement.create(name: "Ceiling", room_id: bedroom_one.id)
+# curtain = RoomElement.create(name: "Curtain - 2, black", room_id: bedroom_one.id)
+# fan = RoomElement.create(name: "Fan - Ceiling", room_id: bedroom_one.id)
 
-door = RoomElement.create(name: "Door", room_id: bedroom_two.id)
-floor = RoomElement.create(name: "Door", room_id: bedroom_two.id)
-ceiling = RoomElement.create(name: "Door", room_id: bedroom_two.id)
-fan = RoomElement.create(name: "Door", room_id: bedroom_two.id)
+# door = RoomElement.create(name: "Door", room_id: bedroom_two.id)
+# floor = RoomElement.create(name: "Door", room_id: bedroom_two.id)
+# ceiling = RoomElement.create(name: "Door", room_id: bedroom_two.id)
+# fan = RoomElement.create(name: "Door", room_id: bedroom_two.id)
 
-puts "This is where I define the fucking comments"
+# puts "This is where I define the fucking comments"
 
-c1 = Comment.create(text_comment: "Black scuff marks, near skirting board, back left corner", room_element_id: ceiling.id, condition_report_id: conditionreport1.id, user_id: jl.id, state: "Working")
-c1.remote_photo_url = "https://images.unsplash.com/photo-1494801819652-1ca9fe13134c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41a38ea25d9615a1d36d7785ecff91bd&auto=format&fit=crop&w=634&q=80"
-c1.save
+# c1 = Comment.create(text_comment: "Black scuff marks, near skirting board, back left corner", room_element_id: ceiling.id, condition_report_id: conditionreport1.id, user_id: jl.id, state: "Working")
+# c1.remote_photo_url = "https://images.unsplash.com/photo-1494801819652-1ca9fe13134c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41a38ea25d9615a1d36d7785ecff91bd&auto=format&fit=crop&w=634&q=80"
+# c1.save
 
-c2 = Comment.create(text_comment: "Fan doesn't work on highest speed", room_element_id: fan.id, condition_report_id: conditionreport1.id, user_id: jl.id, state: "clean")
-c2.remote_photo_url = "https://images.unsplash.com/photo-1494801819652-1ca9fe13134c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41a38ea25d9615a1d36d7785ecff91bd&auto=format&fit=crop&w=634&q=80"
-c2.save
+# c2 = Comment.create(text_comment: "Fan doesn't work on highest speed", room_element_id: fan.id, condition_report_id: conditionreport1.id, user_id: jl.id, state: "clean")
+# c2.remote_photo_url = "https://images.unsplash.com/photo-1494801819652-1ca9fe13134c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41a38ea25d9615a1d36d7785ecff91bd&auto=format&fit=crop&w=634&q=80"
+# c2.save
 
-puts "Fuck off"
+# puts "Fuck off"
 
-puts "This is the end of the first fucking property"
+# puts "This is the end of the first fucking property"
 
-puts "This is now the start of the second fucking property"
+# puts "This is now the start of the second fucking property"
 
 property = Property.new(address: "41 Stewart St, Richmond", square_meter: 800, furnished: true)
 
