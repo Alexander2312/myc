@@ -9,14 +9,12 @@ class ConditionReportsController < ApplicationController
     @conditionreport = ConditionReport.find(params[:id])
     @rooms = @conditionreport.lease.property.rooms
     @room_element_approval = RoomElementApproval.new(condition_report_id: @conditionreport.id)
-
     respond_to do |format|
       format.html
       format.pdf {
         render :pdf => "show", :layout => 'pdf.html'
       }
     end
-
   end
 
   def new
@@ -34,7 +32,7 @@ class ConditionReportsController < ApplicationController
     @comment = Comment.new
     @conditionreport = ConditionReport.find(params[:id])
     @rooms = @conditionreport.lease.property.rooms
-
+    @room_element_approval = RoomElementApproval.new(condition_report_id: @conditionreport.id)
   end
 
   def update
@@ -44,7 +42,6 @@ class ConditionReportsController < ApplicationController
   end
 
   def confirmation
-
     @room_element_approval = RoomElementApproval.new
     @conditionreport = ConditionReport.find(params[:id])
     @rooms = @conditionreport.lease.property.rooms

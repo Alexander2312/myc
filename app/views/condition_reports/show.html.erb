@@ -23,14 +23,6 @@
               <% room.room_elements.each do |element| %>
                 <h4> <%= element.name %> </h4>
 
-                  <div class = "approvals">
-                    <%= simple_form_for ([element, @room_element_approval]) do |f| %>
-                      <%= f.input :condition_report_id, as: :hidden%>
-                      <%= f.input :tenant_approval %>
-                      <%= f.input :owner_approval %>
-                    <% end %>
-                  </div>
-
               Comments 💬
                 <% element.comments.each do |comment| %>
                   <div>
@@ -46,7 +38,10 @@
       </div>
 
       <div class="action-bar">
-        <%= link_to "Confirm", confirmation_path(@conditionreport), class: "btn btn-primary action-bar-button"%>
+
+        <%= link_to "Confirm", confirmation_url, class: "btn btn-primary action-bar-button"%>
+
+        
          <div class="action-bar-light-part"></div>
       </div>
       </div>

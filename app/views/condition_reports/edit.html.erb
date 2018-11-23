@@ -42,6 +42,15 @@
                       <%= button_tag type: 'submit' do %>
                         <i class="fas fa-comment-dots" aria-hidden="true"></i>
                       <% end %>
+
+                    <div class = "approvals">
+                      <%= simple_form_for ([element, @room_element_approval]) do |f| %>
+                      <%= f.input :condition_report_id, as: :hidden%>
+                      <%= f.input :tenant_approval %>
+                      <!-- .input :owner_approval %> -->
+                      <% end %>
+                  </div>
+
                     <% end %>
 
 
