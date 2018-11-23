@@ -13,7 +13,7 @@ class RoomElementApprovalsController < ApplicationController
     @approval.room_element = @room_element
 
     if @approval.save
-      ConfirmationMailer.confirm(@comment).deliver_now
+      # ConfirmationMailer.confirm(@comment).deliver_now
       redirect_to root_path, notice: 'Your report is approved ✅'
     else
       redirect_to root_path
