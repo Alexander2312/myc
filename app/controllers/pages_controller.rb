@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def show
+    @condition_reports = current_user.condition_reports
   end
 
   def kitchensink

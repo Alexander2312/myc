@@ -24,7 +24,8 @@
                 <h3 class="panel-title"><%= element.name %></h3>
               </div>
               <div class="panel-body">
-              <% element.comments.each do |comment| %>
+
+                <% element.comments.each do |comment| %>
                   <%= comment.text_comment %>
                   <%= comment.state %>
                   <div class= "text-right"> <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
@@ -48,11 +49,19 @@
                   <%= link_to new_condition_report_comment_path(@conditionreport) do %>
                     <i class=></i>
                   <% end %>
-                  </div>
                 </div>
-              <% end %>
+
+                <% element.comments.each do |comment| %>
+                  <div>
+                    <%= comment.text_comment %>
+                    <%= comment.state %>
+                    <div class= "text-right"> <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
+                    </div>
+                  </div>
+                <% end %>
               </div>
             </div>
+
           <% end %>
         <% end %>
       </div>
