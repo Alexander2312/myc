@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-
+    skip_before_action :authenticate_user!
 
 	def new
 		@property = Property.new

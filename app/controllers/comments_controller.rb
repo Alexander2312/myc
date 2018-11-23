@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+    skip_before_action :authenticate_user!
+
   def new
     @comment = Comment.new
     @conditionreport = ConditionReport.find(params[:condition_report_id])
