@@ -17,6 +17,8 @@ class ConditionReportsController < ApplicationController
       }
     end
 
+
+
   end
 
   def new
