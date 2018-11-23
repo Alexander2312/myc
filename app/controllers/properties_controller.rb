@@ -1,5 +1,5 @@
 class PropertiesController < ApplicationController
-
+    skip_before_action :authenticate_user!
 
 	def new
 		@property = Property.new
@@ -14,6 +14,11 @@ class PropertiesController < ApplicationController
       render :new
     end
 	end
+
+  def index
+    @properties = Property.all
+  end
+
 
   private
 

@@ -3,12 +3,20 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/pages/entry" => "pages#show", as: :entry
   get "/pages/kitchensink" => "pages#kitchensink", as: :kitchensink
+  get "/condition_reports/:id/confirmation" => "condition_reports#confirmation", as: :confirmation
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :properties
 
 
-  resources :condition_reports, except: [:destroy]
+  resources :condition_reports, except: [:destroy] do
+    resources :comments, only: [:new, :create]
+  end
+
+
+
     # resources :rooms, only: [:new, :create]
+
 
 
   resources :rooms do
