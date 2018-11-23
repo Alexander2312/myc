@@ -1,14 +1,14 @@
 <!-- edit.html.erb -->
 <% content_for :page_header do %>
   <div class="page-header">
-    <h1 class="page-header-title">New condition report</h1>
-    <h4 class="page-header-address">555 St kilda rd</h4>
+    <h1 class="page-header-title">Condition Report</h1>
+    <h4 class="page-header-address">Level 1, 41-43 Stewart St, Richmond, VIC 3121, Australia</h4>
   </div>
-  <div class="progress">
+  <!-- <div class="progress">
     <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
       20%
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
 <% end %>
 
 <!--  -->
@@ -24,17 +24,30 @@
                 <h3 class="panel-title"><%= element.name %></h3>
               </div>
               <div class="panel-body">
-                  </div>
-                <% end %>
-                <%= link_to new_condition_report_comment_path(@conditionreport, room_element_id: element.id) do %>
-                    <i class="fas fa-comment-dots" aria-hidden="true"></i>
-                <% end %>
-              
-                <div class="approvals">
-                  <%= simple_form_for ([element, @room_element_approval]) do |f| %>
-                    <%= f.input :condition_report_id, as: :hidden%>
-                    <%= f.input :tenant_approval %>
-                    <!-- .input :owner_approval %> -->
+
+                <% element.comments.each do |comment| %>
+                  <%= comment.text_comment %>
+                  <%= comment.state %>
+                  <div class= "text-right"> <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
+                    <%= simple_form_for [@conditionreport, @comment], url:  new_condition_report_comment_path(@conditionreport), method: 'get' do |f| %>
+                      <%= hidden_field_tag 'room_element_id', element.id %>
+                      <%= button_tag type: 'submit' do %>
+                        <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                      <% end %>
+
+                    <div class = "approvals">
+                      <%= simple_form_for ([element, @room_element_approval]) do |f| %>
+                      <%= f.input :condition_report_id, as: :hidden%>
+                      <%= f.input :tenant_approval %>
+                      <!-- .input :owner_approval %> -->
+                      <% end %>
+                    </div>
+
+                    <% end %>
+
+
+                  <%= link_to new_condition_report_comment_path(@conditionreport) do %>
+                    <i class=></i>
                   <% end %>
                 </div>
 
