@@ -2,8 +2,8 @@
 <div class="show-page-banner">
 	<div class="show-page-top">
 	    <h4 class="text-center show-page-title"><strong> Condition reports, made <span class="textblue">easy</span>, for <span class="textblue">everyone</span>. </strong></h4>
-	   
-	<div class="text-center"><small>Easy and efficient way to handle your condition reports, for the renter and the landlord.</small></div>	
+
+	<div class="text-center"><small>Easy and efficient way to handle your condition reports, for the renter and the landlord.</small></div>
 	</div>
 </div>
 <% end %>
@@ -12,4 +12,10 @@
 	<h5><strong> My condition report invitations </strong></h5>
 </div>
 
-<div class="panel panel-default"> <div class="panel-body">Inspire9 Manager has invited you to edit a condition report</div></div>
+  <div>
+  <% @condition_reports.each do |condition_report| %>
+<div class="panel panel-default"> <div class="panel-body"><%= link_to "Inspire9 Manager has invited you to edit a condition report", edit_condition_report_path(condition_report) %>
+  <% end %>
+  </div>
+</div>
+
