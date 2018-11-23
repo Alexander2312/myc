@@ -11,6 +11,7 @@
   <!-- </div> -->
 <% end %>
 
+
 <!--  -->
 <div class="container">
   <div class="room">
@@ -24,30 +25,21 @@
                 <h3 class="panel-title"><%= element.name %></h3>
               </div>
               <div class="panel-body">
+                <% element.room_element_approvals.each do |approval| %>
+                  <div>
+                    Tenant approval ✔️ <%= approval.tenant_approval %>
+                    Owner   approval ✔️ <%= approval.owner_approval %>
+                  </div>
+                <% end %>
+                <%= link_to new_condition_report_comment_path(@conditionreport, room_element_id: element.id) do %>
+                    <i class="fas fa-comment-dots" aria-hidden="true"></i>
+                <% end %>
 
-                <% element.comments.each do |comment| %>
-                  <%= comment.text_comment %>
-                  <%= comment.state %>
-                  <div class= "text-right"> <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
-                    <%= simple_form_for [@conditionreport, @comment], url:  new_condition_report_comment_path(@conditionreport), method: 'get' do |f| %>
-                      <%= hidden_field_tag 'room_element_id', element.id %>
-                      <%= button_tag type: 'submit' do %>
-                        <i class="fas fa-comment-dots" aria-hidden="true"></i>
-                      <% end %>
-
-                    <div class = "approvals">
-                      <%= simple_form_for ([element, @room_element_approval]) do |f| %>
-                      <%= f.input :condition_report_id, as: :hidden%>
-                      <%= f.input :tenant_approval %>
-                      <!-- .input :owner_approval %> -->
-                      <% end %>
-                    </div>
-
-                    <% end %>
-
-
-                  <%= link_to new_condition_report_comment_path(@conditionreport) do %>
-                    <i class=></i>
+                <div class="approvals">
+                  <%= simple_form_for ([element, @room_element_approval]) do |f| %>
+                    <%= f.input :condition_report_id, as: :hidden%>
+                    <%= f.input :tenant_approval %>
+                    <!-- .input :owner_approval %> -->
                   <% end %>
                 </div>
 
