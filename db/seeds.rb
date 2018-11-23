@@ -48,11 +48,6 @@ floor = RoomElement.create(name: "Door", room_id: bedroom_two.id)
 ceiling = RoomElement.create(name: "Door", room_id: bedroom_two.id)
 fan = RoomElement.create(name: "Door", room_id: bedroom_two.id)
 
-door = RoomElement.create(name: "Door", room_id: bedroom_two.id)
-floor = RoomElement.create(name: "Door", room_id: bedroom_two.id)
-ceiling = RoomElement.create(name: "Door", room_id: bedroom_two.id)
-fan = RoomElement.create(name: "Door", room_id: bedroom_two.id)
-
 puts "This is where I define the fucking comments"
 
 c1 = Comment.create(text_comment: "Black scuff marks, near skirting board, back left corner", room_element_id: ceiling.id, condition_report_id: conditionreport1.id, user_id: jl.id, state: "Working")
