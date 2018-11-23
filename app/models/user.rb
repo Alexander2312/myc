@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :properties, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  after_create :send_welcome_email
+  #after_create :send_welcome_email
 
   private
 
