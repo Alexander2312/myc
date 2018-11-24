@@ -1,0 +1,136 @@
+body {
+  background-color: white;
+}
+
+.page-header {
+  background-image: linear-gradient(to right top, #5d7fda, #4e76df, #3e6ce4, #2c62e8, #1258eb);
+
+
+  .page-header-title {
+    padding-top: 25px;
+    color: white;
+    font-size: 15px;
+  }
+
+  .page-header-address {
+    color: white;
+  }
+}
+
+.edit {
+
+  .card {
+
+    position: relative;
+    margin-top: 50px;
+    background-color: white;
+    padding: 5px 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px white;
+
+
+    .heading {
+      font-size: 30px;
+      color: #7D6DCD;
+      font-weight: 500;
+    }
+
+    .sub-heading {
+      font-size: 20px;
+      color: #5D7FDA;
+    }
+
+    .comment-image img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .approval i {
+      color: #7D6DCD;
+      font-size: 20px;
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 30px;
+    }
+
+    .add-comment i {
+      position:  absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 15px;
+    }
+
+    .comment {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 85%;
+    }
+
+    .comments .state  {
+      list-style: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+
+       .tag {
+        background: #00226B;
+        border-radius: 3px 0 0 3px;
+        color: white;
+        display: inline-block;
+        height: 26px;
+        line-height: 26px;
+        padding: 0 20px 0 23px;
+        position: relative;
+        margin: 0 10px 10px 0;
+        text-decoration: none;
+        -webkit-transition: color 0.2s;
+        font-size: 10px;
+      }
+
+      .tag::before {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: inset 0 1px rgba(0, 0, 0, 0.25);
+        content: '';
+        height: 6px;
+        left: 10px;
+        position: absolute;
+        width: 6px;
+        top: 10px;
+      }
+
+      .tag::after {
+        background: #fff;
+        border-bottom: 13px solid transparent;
+        border-left: 10px solid #00226B;
+        border-top: 13px solid transparent;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .tag li {
+        padding: 0px 10px;
+        float: left;
+      }
+
+    }
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+}
