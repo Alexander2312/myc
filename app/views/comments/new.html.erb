@@ -25,7 +25,7 @@
 
           <i class="fas fa-camera">
             <%= f.input :photo, placeholder: "Please upload photo", input_html: {accept:"image/*;capture=camera"} %>
-            <%= f.input :photo_cache, as: :hidden %>
+            <% f.input :photo_cache, as: :hidden %>
           </i>
 
         <%= f.button :submit, "Submit comment", class: "btn btn-primary"%>

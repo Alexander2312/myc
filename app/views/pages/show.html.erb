@@ -21,7 +21,9 @@
 
   <div>
   <% @condition_reports.each do |condition_report| %>
-    <div class="panel panel-default"> <div class="panel-body"><%= link_to "Inspire9 Manager has invited you to edit a condition report", edit_condition_report_path(condition_report) %>
+ <!--    <div class="panel panel-default"> -->
+      <div class="panel-body"><%= link_to "Inspire9 Manager has invited you to edit a condition report", edit_condition_report_path(condition_report) %>
+      </div>
   <% end %>
   </div>
 </div>
