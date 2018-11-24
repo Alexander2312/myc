@@ -24,11 +24,11 @@
                 <h4 class="panel-title"> <%= element.name %> </h4>
               </div>
               <div class="panel-body">
-                Comments 💬
-                <% element.comments.each do |comment| %>
-                    <%= comment.text_comment %>
-                    <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %> <br>
-                    <p> Current State: <%= comment.state %></p>
+                <span> Comments: </span>
+                  <% element.comments.each do |comment| %>
+                      <%= comment.text_comment %>
+                      <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %> <br>
+                      <p> Current State: <%= comment.state %></p>
                 <% end %>
               </div>
             </div>

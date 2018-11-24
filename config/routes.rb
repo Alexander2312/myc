@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/pages/kitchensink" => "pages#kitchensink", as: :kitchensink
   get "/condition_reports/:id/confirmation" => "condition_reports#confirmation", as: :confirmation
 
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :properties
 

@@ -45,7 +45,6 @@ class ConditionReportsController < ApplicationController
     @room_element_approval = RoomElementApproval.new
     @conditionreport = ConditionReport.find(params[:id])
     @rooms = @conditionreport.lease.property.rooms
-
   end
 
   private
