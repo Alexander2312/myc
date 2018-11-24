@@ -40,13 +40,15 @@
                   <div>
                     <%= comment.text_comment %>
                     <%= comment.state %>
-                    <div class= "text-right"> <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
+                    <% if comment.photo? %>
+                      <div class= "text-right"> <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo}%>
+                    <% else %>
+                    <% end %>
                     </div>
                   </div>
                 <% end %>
               </div>
             </div>
-
           <% end %>
         <% end %>
       </div>
