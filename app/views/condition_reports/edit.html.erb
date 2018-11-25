@@ -1,21 +1,65 @@
-<% content_for :page_header do %>
-
-<% end %>
-
 <div class="edit">
-  <div class="card">
-    <h2 class="heading">Bedroom</h2>
-    <h3 class="sub-heading">Door</h3>
-    <div class="comments">
-      <ul class="state tags">
-        <li class="tag">Clean</li>
-        <li class="tag">Working</li>
-        <li class="tag">Undamaged</li>
-      </ul>
-      <div class="comment">
-        <div class="text-comment">
-          <p>Wooden, brass handle</p>
+  <% @rooms.each do |room| %>
+    <h2 class="heading"><%= room.name %></h2>
+    <% room.room_elements.each do |element| %>
+      <div class="card">
+            <h3 class="sub-heading">
+              <%= element.name %>
+            </h3>
+            <div class="comments">
+              <% element.comments.each do |comment| %>
+                <ul class="state tags">
+                  <% comment.state.split.each do |state| %>
+                    <li class="tag">
+                      <%= state %>
+                    </li>
+                  <% end %>
+                </ul>
+                <div class="comment">
+                  <div class="text-comment">
+                    <p><%= comment.text_comment %></p>
+                  </div>
+                  <div class="comment-image">
+                    <%= render partial: "shared/lightbox_image", locals: { photo: comment.photo } %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+            <div class="approval">
+              <i class="far fa-check-square"></i>
+            </div>
+            <div class="add-comment">
+              <i class="fas fa-plus"></i>
+            </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="expand-alix">
+  <div class="cards">
+    <div class="card">
+      <div class="card-header">
+        <p>More awesome expanding card</p>
+        <button class="card-expand">
+          <i class="fas fa-chevron-down expand"></i>
+          <i class="fas fa-chevron-up close"></i>
+        </button>
+
+
+      </div>
+      <div class="card-inner">
+        <div class="card-body">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam adipisci nihil dolorum eligendi explicabo modi voluptate minus a itaque fugiat.
         </div>
-        <div class="comment-image">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Wooden_door_with_climbing_ivy_%28Unsplash%29.jpg" alt="">
+        <div class="card-footer">
+          %a{:href => ""} some link
         </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+

@@ -6,7 +6,7 @@
         <div class="comment_form">
           <div class= "form-check-comments"
            <%= simple_form_for([@conditionreport, @comment], url:  condition_report_comments_path(@conditionreport)) do |f| %>
-          <%= f.input :text_comment, as: :text, input_html: {style: 'height:200px !important; border-radius:10px'}, label: false, placeholder: "Comment:" %> 
+          <%= f.input :text_comment, as: :text, input_html: {style: 'height:200px !important; border-radius:10px'}, label: false, placeholder: "Comment:" %>
           <%= f.input :state, label: false, as: :check_boxes, collection: %w[Clean Working Undamaged]%>
           <%= hidden_field_tag 'room_element_id', @room_element.id %>
           <i class="fas fa-camera">
@@ -17,5 +17,5 @@
           <% end %>
         </div>
       </div>
-    </div> 
+    </div>
 </div>
