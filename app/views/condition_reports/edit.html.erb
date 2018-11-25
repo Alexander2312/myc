@@ -20,7 +20,10 @@
                     <p><%= comment.text_comment %></p>
                   </div>
                   <div class="comment-image">
+                    <% if comment.photo? %>
                     <%= render partial: "shared/lightbox_image", locals: { photo: comment.photo } %>
+                    <% else %>
+                    <% end %>
                   </div>
                 </div>
               <% end %>
