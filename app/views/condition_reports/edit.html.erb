@@ -47,7 +47,7 @@
               <div class="card-footer">
 
                 <div class="add-comment">
-                  <i class="fas fa-plus"></i>
+                  <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
                 </div>
               </div>
             </div>
@@ -61,4 +61,3 @@
 <%= link_to "Preview", condition_report_path(@conditionreport), class: "btn btn-primary action-bar-button"%>
 <div class="action-bar-light-part"></div>
 </div>
-

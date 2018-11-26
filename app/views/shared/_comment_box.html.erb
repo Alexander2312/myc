@@ -1,0 +1,14 @@
+
+<div class="form-check-comments">
+	<%= simple_form_for([condition_report, comment], url:  condition_report_comments_path(condition_report)) do |f| %>
+	<%= f.input :text_comment, as: :text, label: false, placeholder: "Comment:" %>
+	<%= f.input :state, label: false, as: :check_boxes, collection: %w[Clean Working Undamaged]%>
+	<%= hidden_field_tag 'room_element_id', room_element_id %>
+	<i class="fas fa-camera">
+		<%= f.input :photo, label: false, placeholder: "Please upload photo", input_html: {accept:"image/*;capture=camera"} %>
+		<%= f.input :photo_cache, as: :hidden %>
+	</i>
+	<%= f.button :submit, "SUBMIT", class: "btn btn-primary"%>
+	<% end %>
+</div>
+
