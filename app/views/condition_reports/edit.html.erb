@@ -2,63 +2,70 @@
   <% @rooms.each do |room| %>
     <h2 class="heading"><%= room.name %></h2>
     <% room.room_elements.each do |element| %>
-      <div class="card">
-            <h3 class="sub-heading">
-              <%= element.name %>
-            </h3>
-            <div class="comments">
-              <% element.comments.each do |comment| %>
-                <ul class="state tags">
-                  <% comment.state.split.each do |state| %>
-                    <li class="tag">
-                      <%= state %>
-                    </li>
-                  <% end %>
-                </ul>
-                <div class="comment">
-                  <div class="text-comment">
-                    <p><%= comment.text_comment %></p>
-                  </div>
-                  <div class="comment-image">
-                    <%= render partial: "shared/lightbox_image", locals: { photo: comment.photo } %>
-                  </div>
+      <div class="expand-alix">
+        <div class="cards">
+          <div class="card">
+            <div class=" card-header">
+              <p class="sub-heading"><%= element.name %></p>
+               <button class="card-expand">
+                  <i class="fas fa-chevron-down expand"></i>
+                  <i class="fas fa-chevron-up close"></i>
+                </button>
+                <div class="approval">
+                  <%= simple_form_for ([element, @room_element_approval]) do |f| %>
+                  <%= f.input :condition_report_id, as: :hidden%>
+                  <%= f.input :tenant_approval, label: "Agreed"%>
                 </div>
-              <% end %>
+                <% end %>
             </div>
+            <div class="card-inner">
+              <div class="card-body">
+                <div class="comments">
+                  <% element.comments.each do |comment| %>
+                    <ul class="state tags">
+                      <% comment.state.split.each do |state| %>
+                        <li class="tag">
+                          <%= state %>
+                        </li>
+                      <% end %></ul>
+                    <div class="comment">
+                      <div class="text-comment">
+                        <p><%= comment.text_comment %></p>
+                      </div>
+                      <div class="comment-image">
+                        <% if comment.photo? %>
+                          <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
+                          <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
+                          </a>
+                        <% else %>
+                        <% end %>
+                      </div>
+                    </div>
+                <% end %>
+                </div>
+              </div>
+              <div class="card-footer">
 
+<<<<<<< HEAD
             <div class="approval">
               <i class="far fa-check-square"></i>
             </div>
             <div class="add-comment">
               <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
+=======
+                <div class="add-comment">
+                  <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
+                </div>
+              </div>
+>>>>>>> 0cbf0d1a42ce864f312ef837f1a05aa3c785aa59
             </div>
+          </div>
+        </div>
       </div>
     <% end %>
   <% end %>
 </div>
-
-<div class="expand-alix">
-  <div class="cards">
-    <div class="card">
-      <div class="card-header">
-        <p>More awesome expanding card</p>
-        <button class="card-expand">
-          <i class="fas fa-chevron-down expand"></i>
-          <i class="fas fa-chevron-up close"></i>
-        </button>
-
-      </div>
-      <div class="card-inner">
-        <div class="card-body">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum ullam adipisci nihil dolorum eligendi explicabo modi voluptate minus a itaque fugiat.
-        </div>
-        <div class="card-footer">
-          %a{:href => ""} some link
-        </div>
-      </div>
-
-    </div>
-  </div>
+<div class="action-bar">
+<%= link_to "Preview", condition_report_path(@conditionreport), class: "btn btn-primary action-bar-button"%>
+<div class="action-bar-light-part"></div>
 </div>
-
-
