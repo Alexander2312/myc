@@ -1,3 +1,5 @@
+<% content_for(:title) { 'Title' } %>
+
 <div class="edit">
   <% @rooms.each do |room| %>
     <h2 class="heading"><%= room.name %></h2>
@@ -13,8 +15,8 @@
                 </button>
                 <div class="approval">
                   <%= simple_form_for ([element, @room_element_approval]) do |f| %>
-                  <%= f.input :condition_report_id, as: :hidden%>
                   <%= f.input :tenant_approval, label: "Agreed"%>
+                  <%= f.input :condition_report_id, as: :hidden%>
                 </div>
                 <% end %>
             </div>
@@ -22,35 +24,43 @@
               <div class="card-body">
                 <div class="comments">
                   <% element.comments.each do |comment| %>
-                    
                     <ul class="state tags">
                       <% if comment.state? %>
                         <% comment.state.split.each do |state| %>
                           <li class="tag">
-                            <%= state %>
+                            <span><%= state %></span>
                           </li>
                         <% end %>
+                      <% else %>
+                        <li class="tag">
+                          <span>No-State</span>
+                        </li>
                       <% end %>
+
                     </ul>
                     <div class="comment">
                       <div class="text-comment">
                         <p><%= comment.text_comment %></p>
                       </div>
-                      <div class="comment-image">
+
                       <% if comment.photo? %>
-                        <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
-                        <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
-                        </a>
-                      <% else %>
-                      <% end %>
-                      </div>
+                        <div class="comment-image">
+                          <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
+                            <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
+                          </a>
+                        </div>
+                        <% end %>
+
+
                     </div>
                 <% end %>
                 </div>
               </div>
               <div class="card-footer">
+
                 <div class="add-comment">
                   <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
+
                 </div>
               </div>
             </div>
