@@ -1,0 +1,26 @@
+.form-check {
+	.comment_state & {
+		display: inline-block;
+		margin-right: 10px;
+		position: relative;
+
+		label {
+			padding: 6px 15px 6px 15px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+		}
+
+		input {
+			margin-right: 10px;
+			visibility: hidden;
+			position: absolute;
+
+			&:checked ~ label {
+				color: white;
+				border-color: blue;
+				background-image: linear-gradient(to right top, #5d7fda, #4e76df, #3e6ce4, #2c62e8, #1258eb);
+
+			}
+		}
+	}	
+}
