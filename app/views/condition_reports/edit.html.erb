@@ -22,12 +22,16 @@
               <div class="card-body">
                 <div class="comments">
                   <% element.comments.each do |comment| %>
+                    
                     <ul class="state tags">
-                      <% comment.state.split.each do |state| %>
-                        <li class="tag">
-                          <%= state %>
-                        </li>
-                      <% end %></ul>
+                      <% if comment.state? %>
+                        <% comment.state.split.each do |state| %>
+                          <li class="tag">
+                            <%= state %>
+                          </li>
+                        <% end %>
+                      <% end %>
+                    </ul>
                     <div class="comment">
                       <div class="text-comment">
                         <p><%= comment.text_comment %></p>
@@ -46,18 +50,13 @@
               </div>
               <div class="card-footer">
 
-<<<<<<< HEAD
             <div class="approval">
               <i class="far fa-check-square"></i>
             </div>
             <div class="add-comment">
               <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
-=======
-                <div class="add-comment">
-                  <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
                 </div>
               </div>
->>>>>>> 0cbf0d1a42ce864f312ef837f1a05aa3c785aa59
             </div>
           </div>
         </div>
