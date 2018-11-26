@@ -21,13 +21,16 @@
                   </div>
                   <div class="comment-image">
                     <% if comment.photo? %>
-                    <%= render partial: "shared/lightbox_image", locals: { photo: comment.photo } %>
+                      <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
+                        <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
+                      </a>
                     <% else %>
                     <% end %>
                   </div>
                 </div>
               <% end %>
             </div>
+
 
             <div class="approval">
               <i class="far fa-check-square"></i>
