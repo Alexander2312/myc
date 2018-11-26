@@ -42,6 +42,7 @@
                       <div class="text-comment">
                         <p><%= comment.text_comment %></p>
                       </div>
+
                       <% if comment.photo? %>
                         <div class="comment-image">
                           <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
@@ -50,13 +51,16 @@
                         </div>
                         <% end %>
 
+
                     </div>
                 <% end %>
                 </div>
               </div>
               <div class="card-footer">
-            <div class="add-comment">
-              <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
+
+                <div class="add-comment">
+                  <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
+
                 </div>
               </div>
             </div>
