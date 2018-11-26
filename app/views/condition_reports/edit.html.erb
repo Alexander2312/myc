@@ -30,7 +30,9 @@
               <i class="far fa-check-square"></i>
             </div>
             <div class="add-comment">
-              <i class="fas fa-plus"></i>
+              <button type="button" class="fas fa-plus plus-sign" data-toggle="modal" data-target="#exampleModal">
+              </button>
+              <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
             </div>
       </div>
     <% end %>
@@ -46,7 +48,6 @@
           <i class="fas fa-chevron-down expand"></i>
           <i class="fas fa-chevron-up close"></i>
         </button>
-
 
       </div>
       <div class="card-inner">
