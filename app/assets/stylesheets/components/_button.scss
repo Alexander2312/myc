@@ -10,6 +10,28 @@
  //    padding: 0;
  //    line-height: $buttonSize - 12px;
  //  }
+ @keyframes clickButton {
+    0% {font-size: 16px}
+    30% {font-size: 18px}
+    100% {font-size: 16px}
+}
+
+  .btn-primary {
+   background-image: linear-gradient(to right top, #5d7fda, #4e76df, #3e6ce4, #2c62e8, #1258eb);
+   letter-spacing: 2px;
+   width: 140px;
+   border-radius: 3px;
+   text-transform: uppercase;
+   box-shadow: 0 0 20px #eee;
+   padding-top: 8px;
+   width: 100%;
+   transition: all 0.2s;
+   line-height: 22px;
+
+   &[disabled] {
+    -webkit-animation: clickButton 0.5s;
+   }
+}
 
 // body{
 //   font-family: 'Montserrat', sans-serif;
@@ -40,9 +62,9 @@
 //   border-radius: 10px;
 //  }
 
-//  .btn:hover {
-//     background-position: right center; /* change the direction of the change here */
-// }
+  .btn-primary:hover {
+   background-position: right center; /* change the direction of the change here */
+  }
 
 //  .btn btn-gradient {
 //     background-image: linear-gradient(to right top, #5d7fda, #4e76df, #3e6ce4, #2c62e8, #1258eb);

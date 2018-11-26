@@ -5,12 +5,12 @@
 	<%= f.input :state, label: false, as: :check_boxes, collection: ["Unclean", "Not-working", "Damaged"]%>
 	<%= hidden_field_tag 'room_element_id', room_element_id %>
 
-  <div class="camera-container">
-    <i class="fas fa-camera btn-camera">
+  <div class="camera-container btn-camera">
+    <i class="fas fa-camera"></i>
+    Add photo
   	<div class="camera-hidden"> <%= f.input :photo, label: false, placeholder: "Please upload photo", input_html: {accept:"image/*;capture=camera"} %>
   	<%= f.input :photo_cache, as: :hidden %>
     </div>
-    </i>
   </div>
 	<%= f.button :submit, "SUBMIT", class: "btn btn-primary"%>
 	<% end %>
