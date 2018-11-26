@@ -9,8 +9,6 @@ class CommentsController < ApplicationController
   end
 
   def create
-
-
     @room_element = RoomElement.find(params[:room_element_id])
     @condition_report = ConditionReport.find(params[:condition_report_id])
     @comment = Comment.new(comment_params)

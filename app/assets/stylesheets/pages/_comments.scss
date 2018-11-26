@@ -9,16 +9,6 @@ legend {
 	display: none;
 }
 
-.state-choices {
-   display: flex;
-   justify-content: space-between;
-}
-
- .state-choice {
-   background: white;
-   padding: 20px;
-}
-
   .btn-camera {
   color: #5D7FDA;
   font-size: 36px !important;
@@ -27,3 +17,9 @@ legend {
   .camera-hidden {
     display: none;
   }
+
+.comments-checkbox {
+	display: inline-block;
+	color: red;
+}
+
