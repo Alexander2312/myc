@@ -33,9 +33,12 @@
                         <p><%= comment.text_comment %></p>
                       </div>
                       <div class="comment-image">
-                        <% if comment.photo %>
+                        <% if comment.photo? %>
+                          <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
+                          <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
+                          </a>
+                        <% else %>
                         <% end %>
-                        <%= render partial: "shared/lightbox_image", locals: { photo: comment.photo } %>
                       </div>
                     </div>
                 <% end %>
@@ -58,5 +61,4 @@
 <%= link_to "Preview", condition_report_path(@conditionreport), class: "btn btn-primary action-bar-button"%>
 <div class="action-bar-light-part"></div>
 </div>
-
 
