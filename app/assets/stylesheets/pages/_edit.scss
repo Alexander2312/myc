@@ -11,7 +11,21 @@
     background-image: linear-gradient(to right top, #5d7fda, #4e76df, #3e6ce4, #2c62e8, #1258eb);
 
 
-  .room_element_approval_tenant_approval {
+    .page-header-title {
+      padding-top: 25px;
+      color: white;
+      font-size: 15px;
+    }
+
+    .page-header-address {
+      color: white;
+    }
+  }
+
+
+  .edit {
+
+    .room_element_approval_tenant_approval {
     .form-check {
       display: flex;
       align-items: center;
@@ -27,25 +41,6 @@
       }
     }
   }
-
-  .form-check-label {
-    padding: 5px;
-  }
-
-
-    .page-header-title {
-      padding-top: 25px;
-      color: white;
-      font-size: 15px;
-    }
-
-    .page-header-address {
-      color: white;
-    }
-  }
-
-
-  .edit {
 
     position: relative;
     margin-top: 50px;
@@ -64,15 +59,8 @@
         color: #7D6DCD;
         font-weight: 500;
       }
-    .sub-heading {
-      font-size: 20px;
-      color: #5D7FDA;
-      margin: 0;
-      margin-left: 30px;
-      padding-right: 75px;
-    }
-    .card {
 
+    .card {
 
       position: relative;
       margin-top: 50px;
@@ -87,6 +75,7 @@
         color: #5D7FDA;
         margin: 0;
         margin-left: 30px;
+        padding-right: 75px;
       }
 
       .comment-image  {
@@ -153,39 +142,6 @@
         overflow: hidden;
         padding: 0;
         display: inline-flex;
-
-
-}
-
-.expand-alix {
-  margin-top:40px;
-  .cards{
-  width: 100%;
-  margin:0 auto;
-  .card{
-    background-color:#fff;
-    border-radius:2px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16),
-      0 3px 6px rgba(0,0,0,0.23);
-    box-sizing: border-box;
-    margin-bottom:15px;
-    transition: all 0.3s;
-    .card-header{
-      text-transform:uppercase;
-      position:relative;
-      padding:10px;
-      button.card-expand {
-        position:absolute;
-        left:5px;
-        top:5px;
-        line-height:10px;
-        padding-right: 15px;
-        vertical-align:middle;
-        height:39px;
-        border:none;
-        background-color:transparent;
-        cursor:pointer;
-        color: #5D7FDA;
 
 
          .tag {
