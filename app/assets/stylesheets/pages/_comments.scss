@@ -9,12 +9,7 @@ legend {
 	display: none;
 }
 
-.state-choices {
-   display: flex;
-   justify-content: space-between;
-}
-
- .state-choice {
-   background: white;
-   padding: 20px;
+.comments-checkbox {
+	display: inline-block;
+	color: red;
 }
