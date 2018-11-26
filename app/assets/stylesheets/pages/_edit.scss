@@ -24,6 +24,23 @@ body {
 
 .edit {
 
+  .room_element_approval_tenant_approval {
+    .form-check {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+
+      .form-check-input,
+      .form-check-label {
+        margin: 0;
+      }
+
+      .form-check-input {
+        margin: 0px 0 2px 4px;
+      }
+    }
+  }
+
   .form-check-label {
     padding: 5px;
   }
@@ -51,6 +68,7 @@ body {
       color: #5D7FDA;
       margin: 0;
       margin-left: 30px;
+      padding-right: 75px;
     }
 
     .comment-image img {
@@ -138,7 +156,7 @@ body {
 .expand-alix {
   margin-top:40px;
   .cards{
-  width:690px;
+  width: 100%;
   margin:0 auto;
   .card{
     background-color:#fff;

@@ -1,3 +1,9 @@
+@keyframes clickButton {
+    0% {font-size: 16px}
+    30% {font-size: 18px}
+    100% {font-size: 16px}
+}
+
 .action-bar {
   position: relative;
   text-align:center;
@@ -14,5 +20,9 @@
     left: -100px;
     right: -100px;
     height: 50%;
+
+   &[disabled] {
+    -webkit-animation: clickButton 0.5s;
+    }
   }
 }
