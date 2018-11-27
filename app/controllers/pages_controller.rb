@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def show
+  def entry
     @condition_reports = current_user.condition_reports
   end
 
