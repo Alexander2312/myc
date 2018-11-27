@@ -184,7 +184,7 @@
         vertical-align: middle;
         height: 23px;
         border: none;
-        background-color: transparent;
+        background-color: transparent !important;
         cursor:pointer;
         color: #414afd;
 
@@ -196,7 +196,7 @@
         }
         .expand{
           display:block;
-          margin: 0;
+          margin: 0px;
         }
         .close{
           display:none;

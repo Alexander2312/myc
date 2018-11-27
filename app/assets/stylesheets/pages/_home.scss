@@ -1,15 +1,48 @@
 // Specific CSS for your home-page
+.logo {
+ display:flex;
+ font-size: 23px;
+ margin-bottom: 10px;
+
+
+}
+.logo-text {
+  color: white;
+  margin-bottom: 10px;
+  margin-top: 26px;
+  margin-left: 3px;
+}
+.home-page-design {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: linear-gradient(to left top, #3a96ef, #528dee, #6982eb, #7e76e5, #9369dc);
+    background-size: contain ;
+    background-repeat: no-repeat;
+  padding: 30px;
+  min-height: 100vh;
+}
+
 .comment_picture {
   width: 100%;
 }
 
-.home-text {
-  color: #5c636e;
-  font-weight: bold;
+.home-page-title {
+  color: white;
+  margin-bottom: 75px;
+  // Condition reports, made easy, for everyone.
+
 }
+.home-text {
+  color: white;
+  // Easy and efficient way...
+}
+
 
 .font-text-home {
   font-size: 95%;
+  // padding: 84px;
+
 }
 
 
@@ -18,8 +51,18 @@
     margin-bottom: -123px;
     margin-top: 93px;
 
+  @keyframes clickButton {
+  0% {font-size: 16px}
+  25% {font-size: 19px}
+  100% {font-size: 16px}
+  }
+
   .login-btn {
-    margin-bottom: -21px;
+    display: flex;
+
+    flex-direction: column;
+    background-position: center;
+    margin-bottom: 8px;
     box-shadow: none;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -28,14 +71,21 @@
     border-radius: 2px;
     text-transform: none;
     letter-spacing: 1px;
-    color: #f4f4f4;
+    border: 1px solid lightgray;
+    color: white;
+    background-color: rgba(90, 90, 90, 0.23);
+     // letter-spacing: 2px;
+     // width: 140px;
+
+     transition: all 0.2s;
+     line-height: 22px;
 
 
 
 
-
-
-
+   &[disabled] {
+    -webkit-animation: clickButton 0.5s;
+   }
   }
 }
 

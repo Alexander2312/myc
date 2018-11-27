@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     if @comment.save!
       # ConfirmationMailer.confirm(@comment).deliver_now
 
-      redirect_to edit_condition_report_path(@condition_report), notice: 'Your comment has been saved 👏'
+      redirect_to edit_condition_report_path(@condition_report)
     else
       render :new
     end
