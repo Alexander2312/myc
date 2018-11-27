@@ -14,7 +14,7 @@ class RoomElementApprovalsController < ApplicationController
 
     if @approval.save
       # ConfirmationMailer.confirm(@comment).deliver_now
-      redirect_to edit_condition_report_path(@approval.condition_report), notice: 'Your report is approved ✅'
+      redirect_to edit_condition_report_path(@approval.condition_report)
     else
       redirect_to root_path
     end
@@ -26,7 +26,7 @@ class RoomElementApprovalsController < ApplicationController
 
     if @approval.update(room_element_approval_params)
       # ConfirmationMailer.confirm(@comment).deliver_now
-      redirect_to edit_condition_report_path(@approval.condition_report), notice: 'Your report is approved ✅'
+      redirect_to edit_condition_report_path(@approval.condition_report)
     else
       redirect_to root_path
     end
