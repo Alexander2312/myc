@@ -10,11 +10,11 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <% if action_name != "home" && action_name != "entry" %>
+    <% if action_name != "home" && action_name != "entry" && action_name != "confirmation"%>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>
-    <div class="<%= (action_name == "home" || action_name == "entry") ? '' : 'container page-wrapper' %>">
+    <div class="<%= (action_name == "home" || action_name == "entry" || action_name == "confirmation") ? '' : 'container page-wrapper' %>">
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>
