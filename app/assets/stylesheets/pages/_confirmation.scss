@@ -1,3 +1,60 @@
-body {
-    background-image: linear-gradient(to right top, #5d7fda, #4e76df, #3e6ce4, #2c62e8, #1258eb);
+.confirmation {
+  height: 100vh;
+  position: relative;
+  color: white;
+  background-image: linear-gradient(to left top, #3a96ef, #528dee, #6982eb, #7e76e5, #9369dc);
+  background-size: cover !important;
+  background-repeat: no-repeat;
+  height:100vh;
+
+
+  h2 {
+    color: white;
+    padding-top: 100px;
+    font-size: 20px;
   }
+
+  .text-center {
+    padding-top: 20px;
+    margin: 0;
+    color: white;
+  }
+
+
+  a:link {
+  color: #333333;
+  position: absolute;
+  margin: 0;
+  text-align: center;
+  }
+  a:visited {
+    color: #FFFFFF;
+  }
+  a:hover {
+    color: #CCCCCC;
+  }
+  a:active {
+    color: #333333;
+  }
+
+
+    a.link-text {
+      color: white;
+      // border: 1px solid #ddd;
+      position: absolute;
+      margin: 0;
+      position: fixed;
+      text-align: center;
+
+    }
+
+
+  i {
+    font-size: 200px;
+    padding-top: 100px;
+    opacity: .70;
+    font-weight: thinnest;
+
+  }
+}
+

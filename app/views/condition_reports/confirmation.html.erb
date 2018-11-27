@@ -1,9 +1,9 @@
-<div class="confirmation">
-  <h2 class="text-center"> CONFIRMATION </h2>
-    <div class="text-center"> Here is a PDF copy of your report
-      <i class="fas fa-paperclip"><%= link_to "Download your PDF", condition_report_path(@conditionreport, format: :pdf), target: "_blank"  %>
-      </i>
-      <p class="text-center"> Check your email and share this report with your Landlord 📧
-      </p>
+<div class="confirmation ">
+<!--   <div class="wrapper wrapper-confirmation"> -->
+    <h2 class="text-center"> REPORT SUBMITTED SUCCESSFULLY </h2>
+    <div class="text-center"> We've sent a copy to your email
+      <i class="far fa-check-circle"></i>
     </div>
+    <%= link_to "Download your PDF", condition_report_path(@conditionreport, format: :pdf), target: "_blank", class: "link-text" %>
 </div>
+
