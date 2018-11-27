@@ -25,6 +25,11 @@
 
   .edit {
 
+    .show {
+      text-align: center;
+      font-weight: bold;
+    }
+
     .room_element_approval_tenant_approval {
     .form-check {
       display: flex;
@@ -144,6 +149,7 @@
         display: inline-flex;
 
 
+
          .tag {
            border: 1px solid #dee2e5;
            background-color: #dee2e5;
@@ -246,7 +252,7 @@
         box-shadow: 0 10px 20px rgba(0,0,0,0.19),
           0 6px 6px rgba(0,0,0,0.23);
         .card-inner{
-          max-height:700px;
+          max-height:2000px;
         }
         button.card-expand{
 
