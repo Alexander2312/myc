@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  get "/pages/entry" => "pages#show", as: :entry
+  get "/pages/entry" => "pages#entry", as: :entry
   get "/pages/kitchensink" => "pages#kitchensink", as: :kitchensink
   get "/condition_reports/:id/confirmation" => "condition_reports#confirmation", as: :confirmation
 
