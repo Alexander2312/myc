@@ -8,3 +8,27 @@
 //   padding-left: 30px;
 //   padding-right: 30px;
 // }
+
+body {
+  background-color: white;
+}
+
+.page-wrapper {
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+.page-header {
+  background-image: linear-gradient(to right top, #5d7fda, #4e76df, #3e6ce4, #2c62e8, #1258eb);
+
+
+  .page-header-title {
+    padding-top: 25px;
+    color: white;
+    font-size: 15px;
+  }
+
+  .page-header-address {
+    color: white;
+  }
+}
