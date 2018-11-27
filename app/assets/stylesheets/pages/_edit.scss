@@ -32,7 +32,26 @@ body {
     }
   }
 
-  .room_element_approval_tenant_approval {
+    .page-header-title {
+      padding-top: 25px;
+      color: white;
+      font-size: 15px;
+    }
+
+    .page-header-address {
+      color: white;
+    }
+  }
+
+
+  .edit {
+
+    .show {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .room_element_approval_tenant_approval {
     .form-check {
       display: flex;
       align-items: center;
@@ -66,16 +85,13 @@ body {
     }
 
   .card {
-
+    
     position: relative;
     margin-top: 34px;
     background-color: white;
     padding: 5px 6px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.12);
     border: 1px white;
-
-
-
 
     .sub-heading {
       font-size: 18px;
@@ -97,7 +113,6 @@ body {
       right: 10px;
       top: 9px;
     }
-
 
     .add-comment i {
       // position:  absolute;
@@ -237,8 +252,9 @@ body {
       box-shadow: 0 1px 3px rgba(0,0,0,0.12),
       0 1px 3px rgba(0,0,0,0.12);
       .card-inner{
-        max-height:500px;
+        max-height:2000px;
       }
+
       button.card-expand{
 
         .expand{

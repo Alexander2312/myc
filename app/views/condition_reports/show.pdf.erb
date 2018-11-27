@@ -1,31 +1,53 @@
 <div class="edit">
-  <div class="card">
-    <% @rooms.each do |room| %>
-      <h3><%= room.name %></h3>
-      <% room.room_elements.each do |element| %>
-        <div class="panel">
-          <div class="panel-heading">
-            <h4 class="panel-title"> <%= element.name %> </h4>
-          </div>
-          <div class="panel-body">
-            <span> Comments: </span>
-            <% element.comments.each do |comment| %>
-              <%= comment.text_comment %>
-              <% if comment.photo? %>
-                <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
-                  <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
-                </a>
-              <% else %>
-              <% end %>
+    <h1 class="show">
+      <%= "Level 1, 41 Stewart Street, Richmond, Victoria" %>
+      <%= "Created on: November 30, 2018" %></h1>
+  <% @rooms.each do |room| %>
+    <h2 class="heading"><%= room.name %></h2>
+    <% room.room_elements.each do |element| %>
 
-            <p> Current State: <%= comment.state %></p>
+      <div class="card">
+        <div class=" card-header">
+          <p class="sub-heading"><%= element.name %></p>
+        </div>
+        <div class="card-inner">
+          <div class="card-body">
+            <div class="comments">
+              <% element.comments.each do |comment| %>
+                <ul class="state tags">
+                  <% if comment.state? %>
+                    <span>Current state:</span>
+                    <% comment.state.split.each do |state| %>
+                      <!-- <li class="tag"> -->
+                        <span><%= state  %></span>
+                      <!-- </li> -->
+                    <% end %>
+                  <% else %>
+                    <!-- li class="tag"> -->
+                      <!-- <span></span> -->
+                    <!-- </li> -->
+                  <% end %>
+                </ul>
+                <div class="comment">
+                  <div class="text-comment">
+                    <p><%= comment.text_comment %></p>
+                  </div>
+                  <% if comment.photo? %>
+                    <div class="comment-image">
+                      <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
+                        <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
+                      </a>
+                    </div>
+                    <% end %>
+                </div>
             <% end %>
+            </div>
+          </div>
+          <div class="card-footer">
           </div>
         </div>
-      <% end %>
-    <% end %>
-      <div class="action-bar">
-        <%= link_to "Confirm", confirmation_url, class: "btn btn-primary action-bar-button"%>
-        <div class="action-bar-light-part"></div>
       </div>
-  </div>
+
+    <% end %>
+  <% end %>
+</div>
