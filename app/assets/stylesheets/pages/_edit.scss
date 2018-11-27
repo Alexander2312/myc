@@ -26,9 +26,7 @@ body {
 
   .new_room_element_approval, .edit_room_element_approval {
     input:checked ~ label {
-      color: white;
-      border-color: blue;
-      background-image: linear-gradient(to right top, #5d7fda, #4e76df, #3e6ce4, #2c62e8, #1258eb);
+      color: #0074e4;
     }
   }
 
@@ -85,7 +83,7 @@ body {
     }
 
   .card {
-    
+
     position: relative;
     margin-top: 34px;
     background-color: white;
