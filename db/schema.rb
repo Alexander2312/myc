@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2018_11_20_032833) do
   end
 
   create_table "room_element_approvals", force: :cascade do |t|
-    t.boolean "tenant_approval", default: false
+    t.boolean "tenant_approval", default: true
     t.boolean "owner_approval", default: false
     t.bigint "condition_report_id"
     t.bigint "room_element_id"
