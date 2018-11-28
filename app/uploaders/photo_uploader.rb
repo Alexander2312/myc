@@ -1,7 +1,13 @@
 class PhotoUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
-  # Remove everything else
+  process eager: true  # Force version generation at upload time.
+
+  process convert: 'jpg'
+
+  version :thumbnail do
+    resize_to_fit 80, 110
+  end
 end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
