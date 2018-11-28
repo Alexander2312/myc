@@ -37,17 +37,19 @@
       .form-check-label {
         margin: 0;
         font-weight: normal;
-        font-size: 13px;
+        font-size: 12px;
       }
 
       .form-check-input {
-        margin: 0px 0 2px 4px;
+        margin: 0px 0 0px 0px;
       }
     }
   }
 
   .form-check-label {
-    padding: 5px;
+    padding: 3px;
+    align-items: right;
+
   }
 
    .heading {
@@ -92,8 +94,8 @@
       color: #90a4ae;
       font-size: 12px;
       position: absolute;
-      right: 10px;
-      top: 9px;
+      right: 1px;
+      top: 7px;
     }
 
     .add-comment i {
@@ -170,7 +172,6 @@
     margin-bottom: -28px;
     transition: all 0.3s;
     .card-header{
-      text-transform:uppercase;
       position:relative;
       padding:10px;
       button.card-expand {
