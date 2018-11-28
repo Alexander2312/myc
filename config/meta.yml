@@ -1,0 +1,5 @@
+meta_product_name: "Flidow"
+meta_title: "Flidow - Condition reports, made easy, for everyone."
+meta_description: "Easy and efficient way to handle your condition reports, for the renter and the landlord."
+meta_image: "Flidow.png"                       # should exist in `app/assets/images/`
+twitter_account: "@Flidow_twitter_account"   # required for Twitter Cards
