@@ -4,7 +4,7 @@
   <% @rooms.each do |room| %>
     <h2 class="heading"><%= room.name %></h2>
     <% room.room_elements.each do |element| %>
-      <div class="expand-alix">
+      <div class="expand-alix" id="element-<%= element.id %>">
         <div class="cards">
           <div class="card">
             <div class=" card-header">
@@ -69,5 +69,4 @@
 </div>
 <div class="action-bar">
 <%= link_to "Preview", condition_report_path(@conditionreport), class: "btn btn-primary action-bar-button"%>
-<div class="action-bar-light-part"></div>
 </div>
