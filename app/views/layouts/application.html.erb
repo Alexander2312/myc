@@ -13,6 +13,7 @@
     <% if action_name != "home" && action_name != "entry" && action_name != "confirmation"%>
       <%= render 'shared/navbar' %>
     <% end %>
+      <%= render 'shared/flashes' %>
     <div class="<%= (action_name == "home" || action_name == "entry" || action_name == "confirmation") ? '' : 'container page-wrapper' %>">
       <%= yield %>
     </div>

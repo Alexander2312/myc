@@ -16,13 +16,12 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
     @comment.condition_report = @condition_report
 
-
-    if @comment.save!
+    if @comment.save
       # ConfirmationMailer.confirm(@comment).deliver_now
-
       redirect_to edit_condition_report_path(@condition_report)
     else
-      render :new
+      flash[:alert] = "You need to add some text"
+      redirect_to edit_condition_report_path(@condition_report)
     end
   end
 

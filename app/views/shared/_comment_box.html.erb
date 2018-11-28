@@ -1,7 +1,8 @@
 
 <div class="form-check-comments">
 	<%= simple_form_for([condition_report, comment], url:  condition_report_comments_path(condition_report)) do |f| %>
-	<%= f.input :text_comment, as: :text, label: false, placeholder: "Comment:" %>
+  <%= f.error_notification %>
+	<%= f.input :text_comment, as: :text, label: false, placeholder: "Include as much detail as possible..", error: f.full_error(:text_comment) %>
   <fieldset class="form-group check_boxes optional comment_state">
     <legend class="col-form-label pt-0">State</legend>
     <input type="hidden" name="comment[state][]" value="">
@@ -25,4 +26,3 @@
 	<%= f.button :submit, "SUBMIT", class: "btn btn-primary"%>
 	<% end %>
 </div>
-
