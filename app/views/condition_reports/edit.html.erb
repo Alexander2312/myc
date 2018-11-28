@@ -46,7 +46,7 @@
                       <% if comment.photo? %>
                         <div class="comment-image">
                           <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
-                            <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
+                              <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
                           </a>
                         </div>
                         <% end %>
