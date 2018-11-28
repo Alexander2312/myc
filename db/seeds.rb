@@ -90,7 +90,6 @@ couch = RoomElement.create(name: "Modular couch", room_id: breakout.id)
 armchair = RoomElement.create(name: "Leather arm chair", room_id: breakout.id)
 tv = RoomElement.create(name: "Television", room_id: breakout.id)
 barfridge = RoomElement.create(name: "Bar fridge", room_id: breakout.id)
-dog = RoomElement.create(name: "Dog", room_id: breakout.id)
 
 frontdesk = RoomElement.create(name: "Front desk", room_id: reception.id)
 couch1 = RoomElement.create(name: "Couch - yellow", room_id: reception.id)
@@ -104,11 +103,6 @@ microwave = RoomElement.create(name: "Microwave", room_id: kitchen.id)
 mtoilet = RoomElement.create(name: "Toilet - Male", room_id: bathroom.id)
 ftoilet = RoomElement.create(name: "Toilet - Female", room_id: bathroom.id)
 
-puts "I just finished defining the fucking room_elements, and now im going to start on the comments"
-
-comment = Comment.create(text_comment: "Cute dog running around everywhere", room_element_id: dog.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean")
-comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032685/dog-2.jpg"
-comment.save
 
 comment = Comment.create(text_comment: "Reception desk. Comes with a community manager.", room_element_id: frontdesk.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Not working")
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878565/image4.jpg"
@@ -126,8 +120,8 @@ comment = Comment.create(text_comment: "Elevator problems : blocking half way do
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032687/elevator-2.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Something weird with this pool table", room_element_id: pooltable.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Not clean Not working Damaged")
-comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032686/Michael.jpg"
+comment = Comment.create(text_comment: "Green pool table, scratched.", room_element_id: pooltable.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Not clean Not working Damaged")
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543395274/Pooltable.jpg"
 comment.save
 
 comment = Comment.create(text_comment: "Panasonic tv bought in 2017", room_element_id: tv.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
@@ -137,6 +131,7 @@ comment = Comment.create(text_comment: "Blue 'Killerspin' ping pong table. Comes
 comment.save
 
 comment = Comment.create(text_comment: "New table in mahogany wood. Comes with 6 chairs.", room_element_id: table.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543395272/Kitchen.jpg"
 comment.save
 
 comment = Comment.create(text_comment: "Bosch microwave.", room_element_id: microwave.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
