@@ -84,19 +84,19 @@ door_p = RoomElement.create(name: "Door", room_id: pool_room.id)
 elevator = RoomElement.create(name: "Elevator", room_id: breakout.id)
 
 walls = RoomElement.create(name: "Walls", room_id: breakout.id)
-pooltable = RoomElement.create(name: "Pool Table", room_id: breakout.id)
-pingpongtable = RoomElement.create(name:"Ping Pong Table", room_id: breakout.id)
-couch = RoomElement.create(name: "Modular Couch", room_id: breakout.id)
-armchair = RoomElement.create(name: "Leather Arm Chair", room_id: breakout.id)
+pooltable = RoomElement.create(name: "Pool table", room_id: breakout.id)
+pingpongtable = RoomElement.create(name:"Ping pong table", room_id: breakout.id)
+couch = RoomElement.create(name: "Modular couch", room_id: breakout.id)
+armchair = RoomElement.create(name: "Leather arm chair", room_id: breakout.id)
 tv = RoomElement.create(name: "Television", room_id: breakout.id)
-barfridge = RoomElement.create(name: "Bar Fridge", room_id: breakout.id)
+barfridge = RoomElement.create(name: "Bar fridge", room_id: breakout.id)
 dog = RoomElement.create(name: "Dog", room_id: breakout.id)
 
-frontdesk = RoomElement.create(name: "Front Desk", room_id: reception.id)
-couch1 = RoomElement.create(name: "Couch - Yellow", room_id: reception.id)
-couch2 = RoomElement.create(name: "Couch - Brown Leather ", room_id: reception.id)
+frontdesk = RoomElement.create(name: "Front desk", room_id: reception.id)
+couch1 = RoomElement.create(name: "Couch - yellow", room_id: reception.id)
+couch2 = RoomElement.create(name: "Couch - brown leather ", room_id: reception.id)
 
-comfridge = RoomElement.create(name: "Double Fridge", room_id: kitchen.id)
+comfridge = RoomElement.create(name: "Double fridge", room_id: kitchen.id)
 fridge = RoomElement.create(name: "Fridge", room_id: kitchen.id)
 table = RoomElement.create(name: "Table", room_id: kitchen.id)
 microwave = RoomElement.create(name: "Microwave", room_id: kitchen.id)
@@ -114,7 +114,7 @@ comment = Comment.create(text_comment: "Reception desk. Comes with a community m
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878565/image4.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Paint peeling", room_element_id: walls.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Not clean Working Damaged")
+comment = Comment.create(text_comment: "Paint peeling from the wall", room_element_id: walls.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Not clean Working Damaged")
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032684/wall4.jpg"
 comment.save
 

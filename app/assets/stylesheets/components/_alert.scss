@@ -6,10 +6,16 @@
   margin: 0;
   text-align: center;
   color: white;
+  border: 0;
+  position: absolute;
+  right: 10px;
+  top: 80px;
+  border-radius: 15px;
 }
 .alert-info {
-  background: $blue;
+  background: #13066bb5;
 }
 .alert-warning {
-  background: $blue;
+  background: #13066bb5;
 }
+
