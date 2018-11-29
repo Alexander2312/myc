@@ -26,7 +26,7 @@ class RoomElementApprovalsController < ApplicationController
 
     if @approval.update(room_element_approval_params)
       # ConfirmationMailer.confirm(@comment).deliver_now
-      redirect_to edit_condition_report_path(@approval.condition_report)
+      redirect_to edit_condition_report_path(@approval.condition_report, anchor: "element-#{@room_element.id}", "no-open" => true)
     else
       redirect_to root_path
     end
