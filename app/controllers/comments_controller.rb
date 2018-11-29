@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
       # ConfirmationMailer.confirm(@comment).deliver_now
       redirect_to edit_condition_report_path(@condition_report, anchor: "element-#{@room_element.id}")
     else
-      flash[:alert] = "You need to add some text"
+      flash[:alert] = "Please complete all fields"
       redirect_to edit_condition_report_path(@condition_report)
     end
   end
