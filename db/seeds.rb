@@ -79,12 +79,9 @@ kitchen = Room.create(name: "Kitchen", property_id: property.id)
 bathroom = Room.create(name: "Bathroom", property_id: property.id)
 pool_room = Room.create(name: "Pool Room", property_id: property.id)
 breakout = Room.create(name: "Breakout Space", property_id: property.id)
-
-<<<<<<< HEAD
-door_r = RoomElement.create(name: "Door", room_id: pool_room.id)
-door = RoomElement.create(name: "Door", room_id: green_room.id)
-door = RoomElement.create(name: "Door", room_id: elbow_room.id)
-slidingdoor = RoomElement.create(name: "Sliding door", room_id: boiler_room.id)
+green_room = Room.create(name: "Green Room", property_id: property.id)
+elbow_room = Room.create(name: "Elbow Room", property_id: property.id)
+boiler_room = Room.create(name: "Boiler Room", property_id: property.id)
 
 ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: pool_room.id)
 ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: green_room.id)
@@ -96,102 +93,81 @@ light = RoomElement.create(name: "Light fittings", room_id: pool_room.id)
 light = RoomElement.create(name: "Light fittings", room_id: green_room.id)
 light = RoomElement.create(name: "Light fittings", room_id: elbow_room.id)
 light = RoomElement.create(name: "Light fittings", room_id: boiler_room.id)
+light2 = RoomElement.create(name: "Light fittings", room_id: breakout.id)
 
-
-=======
-door_p = RoomElement.create(name: "Door", room_id: pool_room.id)
 elevator = RoomElement.create(name: "Elevator", room_id: breakout.id)
 
-walls = RoomElement.create(name: "Walls", room_id: breakout.id)
->>>>>>> 85ec8bd2b01a2457d9234b41fd7236f47a5fa45f
 pooltable = RoomElement.create(name: "Pool table", room_id: breakout.id)
 pingpongtable = RoomElement.create(name:"Ping pong table", room_id: breakout.id)
 couch = RoomElement.create(name: "Modular couch", room_id: breakout.id)
 armchair = RoomElement.create(name: "Leather arm chair", room_id: breakout.id)
 tv = RoomElement.create(name: "Television", room_id: breakout.id)
-<<<<<<< HEAD
 tvstand = RoomElement.create(name: "Television stand", room_id: breakout.id)
-bar = RoomElement.create(name: "Bar", room_id: breakout.id)
-=======
->>>>>>> 85ec8bd2b01a2457d9234b41fd7236f47a5fa45f
 barfridge = RoomElement.create(name: "Bar fridge", room_id: breakout.id)
 
 frontdesk = RoomElement.create(name: "Front desk", room_id: reception.id)
 couch1 = RoomElement.create(name: "Couch - yellow", room_id: reception.id)
 couch2 = RoomElement.create(name: "Couch - brown leather ", room_id: reception.id)
-<<<<<<< HEAD
 smltable = RoomElement.create(name: "Coffee table", room_id: reception.id)
-
-comfridge = RoomElement.create(name: "Double fridge", room_id: kitchen.id)
-fridge = RoomElement.create(name: "Fridge", room_id: kitchen.id)
-i9fridge = RoomElement.create(name: "i9 Staff fridge", room_id: kitchen.id)
-bench = RoomElement.create(name: "Bench", room_id: kitchen.id)
-table = RoomElement.create(name: "Table", room_id: kitchen.id)
-hightable = RoomElement.create(name: "High table", room_id: kitchen.id)
-=======
 
 comfridge = RoomElement.create(name: "Double fridge", room_id: kitchen.id)
 fridge = RoomElement.create(name: "Fridge", room_id: kitchen.id)
 table = RoomElement.create(name: "Table", room_id: kitchen.id)
 microwave = RoomElement.create(name: "Microwave", room_id: kitchen.id)
->>>>>>> 85ec8bd2b01a2457d9234b41fd7236f47a5fa45f
+shelving = RoomElement.create(name: "Shelving", room_id: kitchen.id)
+coffee = RoomElement.create(name: "Coffee machine", room_id: kitchen.id)
+
 
 mtoilet = RoomElement.create(name: "Toilet - Male", room_id: bathroom.id)
 ftoilet = RoomElement.create(name: "Toilet - Female", room_id: bathroom.id)
 
 
-comment = Comment.create(text_comment: "Reception desk. Comes with a community manager.", room_element_id: frontdesk.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Not working")
+comment = Comment.create(text_comment: "Comes with a friendly Community Manager", room_element_id: frontdesk.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878565/image4.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Paint peeling from the wall", room_element_id: walls.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Not clean Working Damaged")
+comment = Comment.create(text_comment: "Paint peeling from the wall", room_element_id: ceiling.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032684/wall4.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Worn leather on the couch", room_element_id: couch2.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Damaged")
+comment = Comment.create(text_comment: "Material is worn with general wear and tear", room_element_id: couch2.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032802/couch-3.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Elevator problems : blocking half way down most of the time.", room_element_id: elevator.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Not working")
-comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032687/elevator-2.jpg"
-comment.save
-
-comment = Comment.create(text_comment: "Green pool table, scratched.", room_element_id: pooltable.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Not clean Not working Damaged")
+comment = Comment.create(text_comment: "Pool table, with cues and balls", room_element_id: pooltable.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543395274/Pooltable.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Panasonic tv bought in 2017", room_element_id: tv.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
+comment = Comment.create(text_comment: "Panosonic, flat screen, black", room_element_id: tv.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
-<<<<<<< HEAD
-
-=======
-comment = Comment.create(text_comment: "Blue 'Killerspin' ping pong table. Comes with balls and ping-pong bats", room_element_id: pingpongtable.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
+comment = Comment.create(text_comment: "Blue 'Killerspin' ping pong table, with balls and ping-pong paddles", room_element_id: pingpongtable.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
->>>>>>> 85ec8bd2b01a2457d9234b41fd7236f47a5fa45f
 
-comment = Comment.create(text_comment: "New table in mahogany wood. Comes with 6 chairs.", room_element_id: table.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
+comment = Comment.create(text_comment: "Mahogany wood, new condition, has 6 matching chairs", room_element_id: table.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543395272/Kitchen.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Bosch microwave.", room_element_id: microwave.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
+comment = Comment.create(text_comment: "Bosch, stainless steel, model MJKLU8428", room_element_id: microwave.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
-comment = Comment.create(text_comment: "Bosch fridge. Dimensions: 200x95", room_element_id: fridge.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
+comment = Comment.create(text_comment: "Bosch, white,  model JKLFUA81", room_element_id: fridge.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
-comment = Comment.create(text_comment: "New yellow couch. Dimensions: 200x80, h:130", room_element_id: couch1.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
+comment = Comment.create(text_comment: "Yellow couch, new condition", room_element_id: couch1.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
-comment = Comment.create(text_comment: "Bosch fridge. Dimensions: 200x95", room_element_id: comfridge.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
+comment = Comment.create(text_comment: "Bosch fridge, double glass door, white, model JMODFH8998", room_element_id: comfridge.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
-comment = Comment.create(text_comment: "Bar fridge. Dimensions: 100x200", room_element_id: barfridge.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Clean Working Undamaged")
+comment = Comment.create(text_comment: "Bar fridge, stainless steel, model NFHJKU87348", room_element_id: barfridge.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
+comment = Comment.create(text_comment: "White dome light fittings, suspended from the ceiling x 7", room_element_id: light2.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.save
 
-
-
+comment = Comment.create(text_comment: "Polished timber floor, some scuff marks, generally good condition", room_element_id: floor.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.save
 
 puts "This is the end of this motherfucking seed file, snakes on a plane"
 
