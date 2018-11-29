@@ -1,43 +1,72 @@
-<!-- edit.html.erb -->
+<% content_for(:title) { 'Title' } %>
 
-<div class="container">
-  <div class="room">
-    <div class="row">
-      <div class="col-md-10">
-        <% @rooms.each do |room| %>
-          <h3><%= room.name %></h3>
-          <% room.room_elements.each do |element| %>
-            <div class="panel">
-              <div class="panel-heading">
-                <h3 class="panel-title"><%= element.name %></h3>
+<div class="edit">
+  <% @rooms.each do |room| %>
+    <h2 class="heading"><%= room.name %></h2>
+    <% room.room_elements.each do |element| %>
+      <div class="expand-alix" id="element-<%= element.id %>">
+        <div class="cards">
+          <div class="card">
+            <div class=" card-header">
+              <p class="sub-heading"><%= element.name %></p>
+               <button class="card-expand">
+                  <i class="fas fa-chevron-down expand"></i>
+                  <i class="fas fa-chevron-up close"></i>
+                </button>
+                <div class="approval">
+                  <%= simple_form_for ([element, RoomElementApproval.find_by(condition_report_id: @conditionreport.id, room_element_id: element.id) || @room_element_approval]) do |f| %>
+                  <%= f.input :tenant_approval, label: "Agreed"%>
+                  <%= f.input :condition_report_id, as: :hidden%>
+                </div>
+                <% end %>
+            </div>
+            <div class="card-inner">
+              <div class="card-body">
+                <div class="comments">
+                  <% element.comments.each do |comment| %>
+                    <ul class="state tags">
+                      <% if comment.state? %>
+                        <% comment.state.split.each do |state| %>
+                          <li class="tag">
+                            <span><%= state %></span>
+                          </li>
+                        <% end %>
+                      <% else %>
+                        <li class="tag">
+                          <span>No-State</span>
+                        </li>
+                      <% end %>
+
+                    </ul>
+                    <div class="comment">
+                      <div class="text-comment">
+                        <p><%= comment.text_comment %></p>
+                      </div>
+
+                      <% if comment.photo? %>
+                        <div class="comment-image">
+                          <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
+                            <%= cl_image_tag comment.photo, height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
+                          </a>
+                        </div>
+                        <% end %>
+                    </div>
+                <% end %>
+                </div>
               </div>
-              <div class="panel-body">
-              <% element.room_element_approvals.each do |approval| %>
-                <div>
-                  Tenant approval ✔️ <%= approval.tenant_approval %>
-                  Owner   approval ✔️ <%= approval.owner_approval %>
-                </div>
-              <% end %>
+              <div class="card-footer">
 
-              <% element.comments.each do |comment| %>
-                <div>
-                  <%= comment.text_comment %>
-                  <%= comment.state %>
-                  <%= render partial: "shared/lightbox_image", locals: {photo: comment.photo} %>
-                  <%= link_to new_room_element_comment_path(element) do %>
-                    <i class="fas fa-comment-dots"></i>
-                  <% end %>
+                <div class="add-comment">
+                  <%= render "shared/comment_box", comment: @comment, condition_report: @conditionreport, room_element_id: element.id %>
                 </div>
-              <% end %>
               </div>
             </div>
-          <% end %>
-        <% end %>
+          </div>
+        </div>
       </div>
-      <div class= "text-center">
-        <p><%= link_to "Preview", condition_report_path(@conditionreport), class: "btn btn-primary" %></p>
-      </div>
-    </div>
-  </div>
+    <% end %>
+  <% end %>
 </div>
-
+<div class="action-bar">
+<%= link_to "Preview", condition_report_path(@conditionreport), class: "btn btn-primary action-bar-button"%>
+</div>

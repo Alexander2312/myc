@@ -7,7 +7,7 @@
         <%= simple_form_for ([@room_element, @room_element_approval]) do |f| %>
         <div class="row">
           <div class= "col-xs-6">
-            <%= f.input :tenant_approval %>
+            <%= f.input :tenant_approval, :default => true %>
           </div>
           <div class= "col-xs-6">
             <%= f.input :owner_approval %>

@@ -1,0 +1,246 @@
+
+
+.edit {
+
+  .new_room_element_approval, .edit_room_element_approval {
+    input:checked ~ label {
+      color: #0074e4;
+    }
+  }
+
+    .page-header-title {
+      padding-top: 25px;
+      color: white;
+      font-size: 15px;
+    }
+
+    .page-header-address {
+      color: white;
+    }
+  }
+
+
+  .edit {
+
+    // .show {
+    //   text-align: center;
+    //   font-weight: bold;
+    // }
+
+    .room_element_approval_tenant_approval {
+    .form-check {
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+
+      .form-check-input,
+      .form-check-label {
+        margin: 0;
+        font-weight: normal;
+        font-size: 12px;
+      }
+
+      .form-check-input {
+        margin: 0px 0 0px 0px;
+      }
+    }
+  }
+
+  .form-check-label {
+    padding: 3px;
+    align-items: right;
+
+  }
+
+   .heading {
+      font-size: 25px;
+      color: #414afd;
+      font-weight: 500;
+      margin-top: 61px;
+      margin-bottom: -30px;
+      padding-bottom: 3px;
+
+    }
+
+  .card {
+
+    position: relative;
+    margin-top: 34px;
+    background-color: white;
+    padding: 5px 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.12);
+    border: 1px white;
+
+    .sub-heading {
+      font-size: 18px;
+      color: #0074e4;
+      margin: -4px;
+      margin-left: 30px;
+      padding-right: 75px;
+    }
+
+    .comment-image {
+      width: 110px;
+      height: 80px;
+
+      border: 1px solid #ccc;
+
+      img {
+        padding: 5px;
+      }
+    }
+
+    .approval {
+      color: #90a4ae;
+      font-size: 12px;
+      position: absolute;
+      right: 1px;
+      top: 7px;
+    }
+
+    .add-comment i {
+      // position:  absolute;
+      // top: 20px;
+      // right: 20px;
+      font-size: 15px;
+    }
+
+    .comment {
+      // display: flex;
+      // justify-content: space-around;
+      // align-items: center;
+      // width: 85%;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+      width: 100%;
+      border-radius: 3px;
+    }
+
+    .comments .state  {
+      list-style: none;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      display: inline-flex;
+
+       .tag {
+        border: 1px solid #dee2e5;
+        background-color: #dee2e5;
+        border-radius: 5px;
+        padding: 2px 8px;
+        color: #a9b1b5;
+        transition: all 300ms ease-in-out;
+        margin-right: 10px;
+      }
+
+        .tag span {
+          font-size: 15px;
+          margin-bottom: 5px;
+      }
+
+        .tag:hover{
+          color: #fff;
+          // background-color: #E9EFFF;
+          background-image: linear-gradient(to left top, #3a96ef, #528dee, #6982eb, #7e76e5, #9369dc);background-image: linear-gradient(to right top, #5d7fda, #4e76df, #3e6ce4, #2c62e8, #1258eb);
+          // background-color: #E9EFFF;
+        }
+
+      // .tag li {
+      //   padding: 0px 10px;
+      //   float: left;
+      // }
+
+    }
+
+  }
+
+}
+
+.expand-alix {
+  margin-top:40px;
+  .cards{
+  width: 100%;
+  margin: 0 auto;
+  .card{
+    background-color:#fff;
+    border-radius:3px;
+    border-left: 1px solid #0074e4;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12),
+      0 1px 3px rgba(0,0,0,0.12);
+    box-sizing: border-box;
+    margin-bottom: -28px;
+    transition: all 0.3s;
+    .card-header{
+      position:relative;
+      padding:10px;
+      button.card-expand {
+        outline: none;
+        // to not display the outline when clicking on the card expand button
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        line-height: 10px;
+        padding-right: 15px;
+        vertical-align: middle;
+        height: 23px;
+        border: none;
+        background-color: transparent !important;
+        cursor:pointer;
+        color: #414afd;
+
+        i {
+
+        }
+        &:hover{
+          background-color:#F9F9F9;
+        }
+        .expand{
+          display:block;
+          margin: 0px;
+        }
+        .close{
+          display:none;
+        }
+      }
+    }
+    .card-footer{
+      border-top: 1px solid #eee;
+      a{
+        color: #757575;
+        text-decoration:none;
+      }
+    }
+    .card-body,
+    .card-footer{
+      padding:10px;
+    }
+    .card-inner{
+      max-height:0;
+      overflow:hidden;
+      transition: max-height 0.5s;
+    }
+    &.expanded{
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12),
+      0 1px 3px rgba(0,0,0,0.12);
+      .card-inner{
+        max-height:2000px;
+      }
+
+      button.card-expand{
+
+        .expand{
+          display: none;
+        }
+        .close{
+          display:block;
+          color: #5D7FDA;
+        }
+      }
+      .card-header{
+        border-bottom: 1px solid #eee;
+      }
+    }
+  }
+}
+}

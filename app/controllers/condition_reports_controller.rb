@@ -10,7 +10,7 @@ class ConditionReportsController < ApplicationController
     @rooms = @conditionreport.lease.property.rooms
     @room_element_approval = RoomElementApproval.new(condition_report_id: @conditionreport.id)
     respond_to do |format|
-      format.html { render :show }
+      format.html
       format.pdf {
         render :pdf => "show", :layout => 'pdf.html'
       }
@@ -29,9 +29,11 @@ class ConditionReportsController < ApplicationController
   end
 
   def edit
-    @room = Room.find(params[:id])
+    @comment = Comment.new
     @conditionreport = ConditionReport.find(params[:id])
+    @comment.user_id = current_user.id
     @rooms = @conditionreport.lease.property.rooms
+    @room_element_approval = RoomElementApproval.new(condition_report_id: @conditionreport.id)
   end
 
   def update
@@ -40,9 +42,15 @@ class ConditionReportsController < ApplicationController
     redirect_to condition_report_path(@conditionreport)
   end
 
+  def confirmation
+    @room_element_approval = RoomElementApproval.new
+    @conditionreport = ConditionReport.find(params[:id])
+    @rooms = @conditionreport.lease.property.rooms
+  end
+
   private
 
   def conditionreport_params
-    params.require(:condition_reports).permit(:owner_signed, :tenant_signed)
+    params.require(:condition_reports).permit(:owner_signed, :tenant_signed, :id, :room_element_id)
   end
 end

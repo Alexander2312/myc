@@ -1,0 +1,28 @@
+
+<div class="form-check-comments">
+	<%= simple_form_for([condition_report, comment], url:  condition_report_comments_path(condition_report)) do |f| %>
+  <%= f.error_notification %>
+	<%= f.input :text_comment, as: :text, label: false, placeholder: "Include as much detail as possible..", error: f.full_error(:text_comment) %>
+  <fieldset class="form-group check_boxes optional comment_state">
+    <legend class="col-form-label pt-0">State</legend>
+    <input type="hidden" name="comment[state][]" value="">
+    <% ["Unclean", "Not-working", "Damaged"].each do |type| %>
+      <div class="form-check">
+        <%= f.check_box("state", { multiple: true, id: "comment_state_#{type.downcase}_#{room_element_id}", class: "form-check-input check_boxes optional" }) %>
+        <%= f.label("state_#{type.downcase}_#{room_element_id}", type, class: "collection_check_boxes") %>
+      </div>
+    <% end %>
+  </fieldset>
+
+	<%= hidden_field_tag 'room_element_id', room_element_id %>
+
+  <div class="camera-container btn-camera">
+    <i class="fas fa-camera"></i>
+    Add photo
+  	<div class="camera-hidden"> <%= f.input :photo, label: false, placeholder: "Please upload photo", input_html: {accept:"image/*;capture=camera"} %>
+  	<%= f.input :photo_cache, as: :hidden %>
+    </div>
+  </div>
+	<%= f.button :submit, "SUBMIT", class: "btn btn-primary comment-button"%>
+	<% end %>
+</div>

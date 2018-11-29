@@ -5,10 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :leases, dependent: :destroy
+  has_many :condition_reports, through: :leases
   has_many :properties, dependent: :destroy
   has_many :comments, dependent: :destroy
 
-  after_create :send_welcome_email
+  #after_create :send_welcome_email
 
   private
 

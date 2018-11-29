@@ -1,0 +1,15 @@
+<div class="entry-page-design">
+  <h3 class="entry-page-title">Welcome Alex</h3>
+	<% @condition_reports.each do |condition_report| %>
+		<%= link_to(edit_condition_report_path(condition_report), class: "entry-page-card entry") do  %>
+			<span class="entry-page-card-icon">
+				<i class="far fa-file-alt"></i>
+			</span>
+			<span class="entry-page-card-content">
+				<p>Inspire9 Manager invited you to edit a condition report</p>
+			</span>
+		<% end %>
+		<%= link_to(edit_condition_report_path(condition_report), class: "entry-page-card entry") do  %>
+		<% end %>
+	<% end %>
+</div>

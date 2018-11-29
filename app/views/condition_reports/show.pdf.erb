@@ -1,41 +1,54 @@
-<!-- show.pdf.erb -->
-<div>
-<h1 class= "text-center">
-    Your Flidow condition report
-</h1>
-</div>
-<div class="container">
-  <div class="room">
-    <div class="row">
+<div class="show">
+    <h1 class="show">
+      <span><%= "Level 1, 41 Stewart Street, Richmond, Victoria" %></span>
+      <span><%= "Created on: November 30, 2018" %><span>
+        <span><%= "Created by: Alexandre Minot" %></span></h1>
+  <% @rooms.each do |room| %>
+    <h2 class="heading"><%= room.name %></h2>
+    <% room.room_elements.each do |element| %>
 
-      <div class="col-md-10">
-        <% @rooms.each do |room| %>
-          <h3><%= room.name %></h3>
-          <div class="panel">
-            <% room.room_elements.each do |element| %>
-              <h4> <%= element.name %> </h4>
-
-                <div class = "approvals">
-                  <%= simple_form_for ([element, @room_element_approval]) do |f| %>
-                    <%= f.input :condition_report_id, as: :hidden%>
-                    <%= f.input :tenant_approval %>
-                    <%= f.input :owner_approval %>
-                  <% end %>
-                </div>
-
-            Comments
+      <div class="card">
+        <div class=" card-header">
+          <p class="sub-heading"><%= element.name %></p>
+        </div>
+        <div class="card-inner">
+          <div class="card-body">
+            <div class="comments">
               <% element.comments.each do |comment| %>
-                <div>
-                  <%= comment.text_comment %>
-                  <%= comment.state %>
-                  <div class="text-right"> <%= cl_image_tag comment.photo, height: 300, width: 400, crop: :fill%>
+                <ul class="state tags">
+                  <% if comment.state? %>
+                    <span>Current state:</span>
+                    <% comment.state.split.each do |state| %>
+                      <!-- <li class="tag"> -->
+                        <span><%= state  %></span>
+                      <!-- </li> -->
+                    <% end %>
+                  <% else %>
+                    <!-- li class="tag"> -->
+                      <!-- <span></span> -->
+                    <!-- </li> -->
+                  <% end %>
+                </ul>
+                <div class="comment">
+                  <% if comment.photo? %>
+                    <div class="comment-image">
+                      <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
+                        <%= cl_image_tag comment.photo.url(:thumbnail), height: 80, width: 110, crop: :fill, class:"pop imagepreview"%>
+                      </a>
+                    </div>
+                    <% end %>
+                  <div class="text-comment">
+                    <p><%= comment.text_comment %></p>
                   </div>
                 </div>
-              <% end %>
             <% end %>
+            </div>
           </div>
-        <% end %>
+          <div class="card-footer">
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+
+    <% end %>
+  <% end %>
 </div>

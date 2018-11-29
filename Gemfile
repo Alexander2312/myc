@@ -20,7 +20,10 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'cloudinary'
+gem 'rest-client', '>= 2.0.1'
 gem 'carrierwave', '~> 1.2'
+gem 'jquery-rails'
+gem 'swipebox'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

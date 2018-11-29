@@ -1,5 +1,6 @@
 class RoomElementsController < ApplicationController
-	
+	  skip_before_action :authenticate_user!
+
 	def new
     @room = Room.find(params[:room_id])
 		@room_element = RoomElement.new

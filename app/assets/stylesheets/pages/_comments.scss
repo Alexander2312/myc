@@ -1,0 +1,39 @@
+
+.comments-page-design {
+	background-color: white;
+	margin-top: 20px;
+	padding: 10px;
+}
+
+.comment-text-box {
+  background-color: transparent; 
+  border-style: solid; 
+  border-width: 0px 0px 1px 0px; 
+  border-color: black;
+}
+
+legend {
+	display: none;
+}
+
+  .btn-camera {
+    color: #5D7FDA;
+    border-top: 1px solid #eee;
+    padding: 10px 0;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #eee;
+
+
+    .fa {
+      margin-right: 5px;
+    }
+  }
+
+  .camera-hidden {
+    display: none;
+  }
+
+.comments-checkbox {
+	display: inline-block;
+	color: red;
+}
