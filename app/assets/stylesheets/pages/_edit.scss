@@ -171,6 +171,7 @@
     box-sizing: border-box;
     margin-bottom: -28px;
     transition: all 0.3s;
+
     .card-header{
       position:relative;
       padding:10px;
@@ -188,6 +189,8 @@
         background-color: transparent !important;
         cursor:pointer;
         color: #414afd;
+
+        transition: ease 0.3s;
 
         i {
 
@@ -218,13 +221,14 @@
     .card-inner{
       max-height:0;
       overflow:hidden;
-      transition: max-height 0.5s;
+      transition: all 4s;
+
     }
     &.expanded{
       box-shadow: 0 1px 3px rgba(0,0,0,0.12),
       0 1px 3px rgba(0,0,0,0.12);
       .card-inner{
-        max-height:2000px;
+        max-height: 3333px;
       }
 
       button.card-expand{
