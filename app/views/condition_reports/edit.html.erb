@@ -25,7 +25,7 @@
             <div class="card-inner">
               <div class="card-body">
                 <div class="comments">
-                  <h2 class="comments-title">Comments</h2>
+                  <h3 class="comments-title">Comments</h3>
                   <% if (element.comments.count == 0) %>
                     No comments yet.
                   <% end %>
@@ -41,8 +41,11 @@
                             <span><%= state %></span>
                           </li>
                         <% end %>
-
-                      <% end %>
+                      <% else %>
+                        <li class="tag">
+                          <span>No-State</span>
+                        </li>
+                      <% end %> 
                     </ul>
 
                       <% if comment.photo? %>

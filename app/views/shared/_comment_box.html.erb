@@ -9,13 +9,13 @@
     <input type="hidden" name="comment[state][]" value="">
     <% ["Unclean", "Not-working", "Damaged"].each do |type| %>
       <div class="form-check">
-        <%= f.check_box("state", { multiple: true, id: "comment_state_#{type.downcase}_#{room_element_id}", class: "form-check-input check_boxes optional" }) %>
+        <%= f.check_box("state", { multiple: true, id: "comment_state_#{type.downcase}_#{room_element_id}", class: "form-check-input check_boxes optional" }, type) %>
         <%= f.label("state_#{type.downcase}_#{room_element_id}", type, class: "collection_check_boxes") %>
       </div>
     <% end %>
   </fieldset>
 
-	<%= hidden_field_tag 'room_element_id', room_element_id %>
+	     <%= hidden_field_tag 'room_element_id', room_element_id %>
 
   <div class="camera-container btn-camera">
     <i class="fas fa-camera"></i>

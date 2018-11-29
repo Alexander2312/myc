@@ -77,8 +77,9 @@
       font-size: 18px;
       color: #0074e4;
       margin: -4px;
-      margin-left: 20px;
+      margin-left: 0px;
       padding-right: 75px;
+      padding-left: 25px;
     }
 
     .comment-image {
@@ -190,6 +191,7 @@
       0 1px 3px rgba(0,0,0,0.12);
     box-sizing: border-box;
     transition: all 0.3s;
+    margin-bottom: 5px;
 
     .card-header{
       position:relative;
@@ -202,12 +204,13 @@
         top: 5px;
         line-height: 10px;
         padding-right: 15px;
+        padding-left: 5px;
         vertical-align: middle;
         height: 23px;
         border: none;
         background-color: transparent !important;
         cursor:pointer;
-        color: #414afd;
+        color: #0074e4 !important;
 
         transition: ease 0.3s;
 
@@ -220,9 +223,14 @@
         .expand{
           display:block;
           margin: 0px;
+          font-size: 14px;
+          padding-top:5px;
         }
         .close{
           display:none;
+          font-size: 14px;
+          padding-top: 5px;
+          
         }
       }
     }
