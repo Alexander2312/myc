@@ -15,7 +15,10 @@
                 </button>
                 <div class="approval">
                   <%= simple_form_for ([element, RoomElementApproval.find_by(condition_report_id: @conditionreport.id, room_element_id: element.id) || @room_element_approval]) do |f| %>
-                  <%= f.input :tenant_approval, label: "Agreed"%>
+                  <%= f.input :tenant_approval, label: "Agreed", :style => "color: blue" %>
+                  
+                   <!--  <label for="option_1" class="check-title">Option 1</label>
+                  </label> -->
                   <%= f.input :condition_report_id, as: :hidden%>
                 </div>
                 <% end %>
