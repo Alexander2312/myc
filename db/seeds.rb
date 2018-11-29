@@ -127,7 +127,7 @@ ftoilet = RoomElement.create(name: "Toilet - Female", room_id: bathroom.id)
 comment = Comment.create(text_comment: "Brown leather arm chair x 2", room_element_id: armchair.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
-comment = Comment.create(text_comment: "Stainless steel, dish rack full of dishes, glasses stacked 20 high", room_element_id: sink.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment = Comment.create(text_comment: "Stainless steel", room_element_id: sink.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
 comment = Comment.create(text_comment: "White, melamine, fixed cube style, filled with tableware, missing forks and spoons", room_element_id: shelving.id, condition_report_id: conditionreport2.id, user_id: jl.id)
@@ -150,9 +150,6 @@ comment.save
 
 comment = Comment.create(text_comment: "Pool table, with cues and balls", room_element_id: pooltable.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543395274/Pooltable.jpg"
-comment.save
-
-comment = Comment.create(text_comment: "Panasonic, flat screen, black with wooden stand", room_element_id: tv.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
 comment = Comment.create(text_comment: "Blue 'Killerspin' ping pong table, with balls and ping-pong paddles", room_element_id: pingpongtable.id, condition_report_id: conditionreport2.id, user_id: jl.id)
