@@ -11,8 +11,12 @@
     </div>
   </div>
   <div class="login">
-    <%= link_to "Log in", user_session_path, class: "btn login-btn"%>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn login-btn"%>
+    <% if current_user.present? %>
+      <%= link_to "Go to dashboard", user_session_path, class: "btn login-btn"%>
+    <% else %>
+      <%= link_to "Log in", user_session_path, class: "btn login-btn"%>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn login-btn"%>
+    <% end %>
   </div>
 </div>
 
