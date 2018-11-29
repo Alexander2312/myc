@@ -221,14 +221,13 @@
     .card-inner{
       max-height:0;
       overflow:hidden;
-      transition: max-height 0.5s;
-      // 3333
+
     }
     &.expanded{
       box-shadow: 0 1px 3px rgba(0,0,0,0.12),
       0 1px 3px rgba(0,0,0,0.12);
       .card-inner{
-        // max-height: none; 3333
+      max-height: none;
       }
 
       button.card-expand{
