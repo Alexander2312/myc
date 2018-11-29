@@ -101,9 +101,12 @@ pooltable = RoomElement.create(name: "Pool table", room_id: breakout.id)
 pingpongtable = RoomElement.create(name:"Ping pong table", room_id: breakout.id)
 couch = RoomElement.create(name: "Modular couch", room_id: breakout.id)
 armchair = RoomElement.create(name: "Leather arm chair", room_id: breakout.id)
-tv = RoomElement.create(name: "Television", room_id: breakout.id)
-tvstand = RoomElement.create(name: "Television stand", room_id: breakout.id)
+tv = RoomElement.create(name: "TV and stand", room_id: breakout.id)
+# tvstand = RoomElement.create(name: "Television stand", room_id: breakout.id)
 barfridge = RoomElement.create(name: "Bar fridge", room_id: breakout.id)
+sink = RoomElement.create(name: "Sink", room_id: kitchen.id)
+desk = RoomElement.create(name: "Desk", room_id: breakout.id)
+
 
 frontdesk = RoomElement.create(name: "Front desk", room_id: reception.id)
 couch1 = RoomElement.create(name: "Couch - yellow", room_id: reception.id)
@@ -121,6 +124,17 @@ coffee = RoomElement.create(name: "Coffee machine", room_id: kitchen.id)
 mtoilet = RoomElement.create(name: "Toilet - Male", room_id: bathroom.id)
 ftoilet = RoomElement.create(name: "Toilet - Female", room_id: bathroom.id)
 
+comment = Comment.create(text_comment: "Brown leather arm chair x 2", room_element_id: armchair.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.save
+
+comment = Comment.create(text_comment: "Stainless steel, dish rack full of dishes, glasses stacked 20 high", room_element_id: sink.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.save
+
+comment = Comment.create(text_comment: "White, melamine, fixed cube style, filled with tableware, missing forks and spoons", room_element_id: shelving.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.save
+
+comment = Comment.create(text_comment: "Panasonic, flat screen, black with wooden stand", room_element_id: tv.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.save
 
 comment = Comment.create(text_comment: "Comes with a friendly Community Manager", room_element_id: frontdesk.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878565/image4.jpg"
@@ -138,7 +152,7 @@ comment = Comment.create(text_comment: "Pool table, with cues and balls", room_e
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543395274/Pooltable.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Panosonic, flat screen, black", room_element_id: tv.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment = Comment.create(text_comment: "Panasonic, flat screen, black with wooden stand", room_element_id: tv.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
 comment = Comment.create(text_comment: "Blue 'Killerspin' ping pong table, with balls and ping-pong paddles", room_element_id: pingpongtable.id, condition_report_id: conditionreport2.id, user_id: jl.id)
@@ -148,7 +162,7 @@ comment = Comment.create(text_comment: "Mahogany wood, new condition, has 6 matc
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543395272/Kitchen.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Bosch, stainless steel, model MJKLU8428", room_element_id: microwave.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment = Comment.create(text_comment: "Bosch, stainless steel, model MJKLU8428 - note whiskey bottle fill levels", room_element_id: microwave.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
 comment = Comment.create(text_comment: "Bosch, white,  model JKLFUA81", room_element_id: fridge.id, condition_report_id: conditionreport2.id, user_id: jl.id)
@@ -167,6 +181,9 @@ comment = Comment.create(text_comment: "White dome light fittings, suspended fro
 comment.save
 
 comment = Comment.create(text_comment: "Polished timber floor, some scuff marks, generally good condition", room_element_id: floor.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.save
+
+comment = Comment.create(text_comment: "Wooden table top desks x 20", room_element_id: desk.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
 puts "This is the end of this motherfucking seed file, snakes on a plane"
