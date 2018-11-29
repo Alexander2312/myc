@@ -30,9 +30,6 @@
                   <% end %>
                 </ul>
                 <div class="comment">
-                  <div class="text-comment">
-                    <p><%= comment.text_comment %></p>
-                  </div>
                   <% if comment.photo? %>
                     <div class="comment-image">
                       <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
@@ -40,6 +37,9 @@
                       </a>
                     </div>
                     <% end %>
+                  <div class="text-comment">
+                    <p><%= comment.text_comment %></p>
+                  </div>
                 </div>
             <% end %>
             </div>
