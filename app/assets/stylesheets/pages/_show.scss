@@ -37,25 +37,29 @@
       .form-check-label {
         margin: 0;
         font-weight: normal;
-        font-size: 13px;
+        font-size: 12px;
+      }
+
+      .form-check-label {
+        margin-right: 5px;
       }
 
       .form-check-input {
-        margin: 0px 0 2px 4px;
+        margin: 0px 0 0px 0px;
       }
     }
   }
 
   .form-check-label {
-    padding: 5px;
+    padding: 3px;
+    align-items: right;
   }
 
    .heading {
       font-size: 25px;
       color: #414afd;
       font-weight: 500;
-      margin-top: 40px;
-      margin-bottom: -30px;
+      margin-top: 25px;
       padding-bottom: 3px;
 
     }
@@ -63,7 +67,6 @@
   .card {
 
     position: relative;
-    margin-top: 34px;
     background-color: white;
     padding: 5px 6px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 3px rgba(0,0,0,0.12);
@@ -71,11 +74,10 @@
 
     .sub-heading {
       font-size: 18px;
-      font-weight: bold;
-      color: $flidow-blue;
-      margin-left: 3px;
+      color: #0074e4;
+      margin: -4px;
+      margin-left: 20px;
       padding-right: 75px;
-      margin-bottom: 5px;
     }
 
     .comment-image {
@@ -93,8 +95,8 @@
       color: #90a4ae;
       font-size: 12px;
       position: absolute;
-      right: 10px;
-      top: 9px;
+      right: 1px;
+      top: 7px;
     }
 
     .add-comment i {
@@ -113,7 +115,15 @@
       align-items: flex-start;
       padding: 20px;
       width: 100%;
+      background: #f4f4f4;
+      padding: 10px;
       border-radius: 3px;
+      margin-bottom: 10px;
+    
+      .text-comment {
+        color: #444;
+        
+      }
     }
 
     .comments .state  {
@@ -122,17 +132,19 @@
       overflow: hidden;
       padding: 0;
       display: inline-flex;
+      margin-bottom: 16px;
 
        .tag {
-        border: 1px solid #ccc;
-        background-color: white;
-        color: #444;
         border-radius: 5px;
         padding: 2px 8px;
         color: #a9b1b5;
         transition: all 300ms ease-in-out;
         margin-right: 10px;
+        background: white;
+        border: 1px solid #ccc;
+        color: #444;
         text-transform: uppercase;
+        font-weight: bold;
       }
 
         .tag span {
@@ -159,19 +171,21 @@
 }
 
 .expand-alix {
-  margin-bottom: 8px;
 
   .cards{
   width: 100%;
   margin: 0 auto;
+
+  .close {
+    opacity: 1;
+  }
+
   .card{
     background-color:#fff;
-    border-radius:3px;
-    border: 1px solid #ccc;
-    border-left: 1px solid $flidow-blue;
-    box-shadow: none;
-    // box-shadow: 0 1px 1px rgba(0,0,0,0.12),
-    //   0 1px 1px rgba(0,0,0,0.12);
+    border-radius:5px;
+    border-left: 1px solid #0074e4;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12),
+      0 1px 3px rgba(0,0,0,0.12);
     box-sizing: border-box;
     transition: all 0.3s;
     .card-header{
@@ -181,16 +195,17 @@
         outline: none;
         // to not display the outline when clicking on the card expand button
         position: absolute;
-        left: 0;
-        top: 6px;
+        left: 5px;
+        top: 5px;
         line-height: 10px;
         padding-right: 15px;
         vertical-align: middle;
         height: 23px;
         border: none;
-        background-color: transparent;
+        background-color: transparent !important;
         cursor:pointer;
-        color: $flidow-blue;
+        color: #414afd;
+
 
         i {
 
@@ -216,7 +231,7 @@
     }
     .card-body,
     .card-footer{
-      padding:7px;
+      padding:10px;
     }
     .card-inner{
       max-height:0;
@@ -227,7 +242,7 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.12),
       0 1px 3px rgba(0,0,0,0.12);
       .card-inner{
-      max-height: none;
+        max-height:2000px;
       }
 
       button.card-expand{
@@ -238,7 +253,6 @@
         .close{
           display:block;
           color: #5D7FDA;
-          font-size: 16px;
         }
       }
       .card-header{
@@ -248,6 +262,39 @@
   }
 }
 }
+
+.label-big-check {
+  position: relative;
+  display: block;
+  padding: 15px 0 15px 35px;
+  margin: 0;
+  border-top: 1px solid #eee;
+  cursor: pointer;
+}
+.label-big-check input {
+  display: none;
+}
+.label-big-check .check-title {
+  font-size: .9em;
+  font-weight: 700;
+  cursor: pointer;
+}
+.label-big-check input[type="checkbox"] + .check-title:before {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 30px;
+  font-family: FontAwesome;
+        content: "\f096";
+        font-size: 2em;
+        line-height: 1;
+        color: #aaa;
+}
+.label-big-check input[type="checkbox"]:checked + .check-title:before {
+    content: "\f14a";
+    color: #333;
+}
+
 .comments-title {
   margin: 10px 0 16px;
   font-size: 18px;
