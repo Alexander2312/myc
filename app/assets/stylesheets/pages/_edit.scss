@@ -230,7 +230,7 @@
           display:none;
           font-size: 14px;
           padding-top: 5px;
-          
+
         }
       }
     }
@@ -255,7 +255,7 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.12),
       0 1px 3px rgba(0,0,0,0.12);
       .card-inner{
-        // max-height: 3333px;
+      max-height: none;
       }
 
       button.card-expand{
