@@ -96,6 +96,7 @@ light4 = RoomElement.create(name: "Light fittings", room_id: boiler_room.id)
 light2 = RoomElement.create(name: "Light fittings", room_id: breakout.id)
 
 elevator = RoomElement.create(name: "Elevator", room_id: breakout.id)
+wall = RoomElement.create(name: "Breakout/wall/ceiling", room_id: breakout.id)
 
 pooltable = RoomElement.create(name: "Pool table", room_id: breakout.id)
 pingpongtable = RoomElement.create(name:"Ping pong table", room_id: breakout.id)
@@ -141,7 +142,7 @@ comment = Comment.create(text_comment: "Comes with a friendly Community Manager"
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878565/image4.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Paint peeling from the wall", room_element_id: ceiling.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
+comment = Comment.create(text_comment: "Paint peeling from the wall", room_element_id: wall.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032684/wall4.jpg"
 comment.save
 
