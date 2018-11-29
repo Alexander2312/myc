@@ -3,7 +3,7 @@
   <h2 class="form-check-comments-title">Add a comment</h2>
 	<%= simple_form_for([condition_report, comment], url:  condition_report_comments_path(condition_report)) do |f| %>
   <%= f.error_notification %>
-	<%= f.input :text_comment, as: :text, label: false, placeholder: "Comment:", error: f.full_error(:text_comment), input_html: {rows: 1}, class: "autoExpand" %>
+	<%= f.input :text_comment, as: :text, label: false, placeholder: "Comment", error: f.full_error(:text_comment) %>
   <fieldset class="form-group check_boxes optional comment_state">
     <legend class="col-form-label pt-0">State</legend>
     <input type="hidden" name="comment[state][]" value="">
