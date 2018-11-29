@@ -5,7 +5,7 @@
 
   .new_room_element_approval, .edit_room_element_approval {
     input:checked ~ label {
-      color: #0074e4;
+      color: $flidow-blue;
     }
   }
 

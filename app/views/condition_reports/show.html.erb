@@ -10,25 +10,28 @@
         <div class="card-inner">
           <div class="card-body">
             <div class="comments">
-              <% element.comments.each do |comment| %>
-                <ul class="state tags">
-                  <% if comment.state? %>
-                    <% comment.state.split.each do |state| %>
+                <h2 class="comments-title">Comments</h2>
+                <% if (element.comments.count == 0) %>
+                  No comments yet.
+                <% end %>
+                <% element.comments.each do |comment| %>
+                  <div class="comment">
+                    <div class="text-comment">
+                      <p><%= comment.text_comment %></p>
+                    </div>
+                  <ul class="state tags">
+                    <% if comment.state? %>
+                      <% comment.state.split.each do |state| %>
+                        <li class="tag">
+                          <span><%= state %></span>
+                        </li>
+                      <% end %>
+                    <% else %>
                       <li class="tag">
-                        <span><%= state %></span>
+                        <span>No-State</span>
                       </li>
                     <% end %>
-                  <% else %>
-                    <li class="tag">
-                      <span>No-State</span>
-                    </li>
-                  <% end %>
-
-                </ul>
-                <div class="comment">
-                  <div class="text-comment">
-                    <p><%= comment.text_comment %></p>
-                  </div>
+                  </ul>
 
                   <% if comment.photo? %>
                     <div class="comment-image">
