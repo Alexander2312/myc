@@ -4,7 +4,7 @@
 
   .new_room_element_approval, .edit_room_element_approval {
     input:checked ~ label {
-      color: #0074e4;
+      color: $flidow-blue;
     }
   }
 
@@ -71,7 +71,8 @@
 
     .sub-heading {
       font-size: 18px;
-      color: #0074e4;
+      font-weight: bold;
+      color: $flidow-blue;
       margin-left: 3px;
       padding-right: 75px;
       margin-bottom: 5px;
@@ -123,17 +124,19 @@
       display: inline-flex;
 
        .tag {
-        border: 1px solid #dee2e5;
-        background-color: #dee2e5;
+        border: 1px solid #ccc;
+        background-color: white;
+        color: #444;
         border-radius: 5px;
         padding: 2px 8px;
         color: #a9b1b5;
         transition: all 300ms ease-in-out;
         margin-right: 10px;
+        text-transform: uppercase;
       }
 
         .tag span {
-          font-size: 15px;
+          font-size: 12px;
           margin-bottom: 5px;
       }
 
@@ -156,18 +159,20 @@
 }
 
 .expand-alix {
-  margin-top:40px;
+  margin-bottom: 8px;
+
   .cards{
   width: 100%;
   margin: 0 auto;
   .card{
     background-color:#fff;
     border-radius:3px;
-    border-left: 1px solid #0074e4;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12),
-      0 1px 3px rgba(0,0,0,0.12);
+    border: 1px solid #ccc;
+    border-left: 1px solid $flidow-blue;
+    box-shadow: none;
+    // box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+    //   0 1px 1px rgba(0,0,0,0.12);
     box-sizing: border-box;
-    margin-bottom: -28px;
     transition: all 0.3s;
     .card-header{
       position:relative;
@@ -176,8 +181,8 @@
         outline: none;
         // to not display the outline when clicking on the card expand button
         position: absolute;
-        left: 5px;
-        top: 5px;
+        left: 0;
+        top: 6px;
         line-height: 10px;
         padding-right: 15px;
         vertical-align: middle;
@@ -185,7 +190,7 @@
         border: none;
         background-color: transparent;
         cursor:pointer;
-        color: #414afd;
+        color: $flidow-blue;
 
         i {
 
@@ -211,7 +216,7 @@
     }
     .card-body,
     .card-footer{
-      padding:10px;
+      padding:7px;
     }
     .card-inner{
       max-height:0;
@@ -234,6 +239,7 @@
         .close{
           display:block;
           color: #5D7FDA;
+          font-size: 16px;
         }
       }
       .card-header{
@@ -242,4 +248,25 @@
     }
   }
 }
+}
+.comments-title {
+  margin: 10px 0 16px;
+  font-size: 18px;
+}
+.form-check-comments-title {
+  margin: 16px 0;
+  font-size: 18px;
+}
+.form-check-comments {
+  textarea {
+    min-height: 80px;
+    box-shadow: none;
+    border-radius: 8px;
+    background: #f4f4f4;
+  }
+  .btn-primary {
+    margin: 10px 0;
+    padding: 12px 0;
+    font-weight: bold;
+  }
 }
