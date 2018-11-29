@@ -16,16 +16,15 @@
                 <% end %>
                 <% element.comments.each do |comment| %>
                   <div class="comment">
-                    <ul class="state tags">
-                      <% if comment.state? %>
+                    <% if comment.state? %>
+                      <ul class="state tags">
                         <% comment.state.split.each do |state| %>
                           <li class="tag">
                             <span><%= state %></span>
                           </li>
                         <% end %>
-                      <% end %>
-                    </ul>
-
+                      </ul>
+                    <% end %>
                   <% if comment.photo? %>
                     <div class="comment-image">
                       <a href="<%= cl_image_path comment.photo, crop: :fill %>" class="swipebox" title= "<%= element.name %>" >
