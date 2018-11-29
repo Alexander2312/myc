@@ -15,8 +15,7 @@
                 </button>
                 <div class="approval">
                   <%= simple_form_for ([element, RoomElementApproval.find_by(condition_report_id: @conditionreport.id, room_element_id: element.id) || @room_element_approval]) do |f| %>
-                  <%= f.input :tenant_approval, label: "Agreed", :style => "color: blue" %>
-                  
+                  <%= f.input :tenant_approval, label: 'Agreed' %>
                    <!--  <label for="option_1" class="check-title">Option 1</label>
                   </label> -->
                   <%= f.input :condition_report_id, as: :hidden%>
@@ -26,7 +25,15 @@
             <div class="card-inner">
               <div class="card-body">
                 <div class="comments">
+                  <h2 class="comments-title">Comments</h2>
+                  <% if (element.comments.count == 0) %>
+                    No comments yet.
+                  <% end %>
                   <% element.comments.each do |comment| %>
+                    <div class="comment">
+                      <div class="text-comment">
+                        <p><%= comment.text_comment %></p>
+                      </div>
                     <ul class="state tags">
                       <% if comment.state? %>
                         <% comment.state.split.each do |state| %>
@@ -39,12 +46,7 @@
                           <span>No-State</span>
                         </li>
                       <% end %>
-
                     </ul>
-                    <div class="comment">
-                      <div class="text-comment">
-                        <p><%= comment.text_comment %></p>
-                      </div>
 
                       <% if comment.photo? %>
                         <div class="comment-image">
