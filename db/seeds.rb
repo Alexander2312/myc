@@ -89,47 +89,42 @@ green_room = Room.create(name: "Green Room", property_id: property.id)
 pool_room = Room.create(name: "Pool Room", property_id: property.id)
 
 door_r = RoomElement.create(name: "Door", room_id: pool_room.id)
-door_l = RoomElement.create(name: "Door", room_id: pool_room.id)
 door = RoomElement.create(name: "Door", room_id: green_room.id)
 door = RoomElement.create(name: "Door", room_id: elbow_room.id)
-slidingdoor = RoomElement.create(name: "Door", room_id: boiler_room.id)
+slidingdoor = RoomElement.create(name: "Sliding door", room_id: boiler_room.id)
 
-ceiling = RoomElement.create(name: "Ceiling", room_id: pool_room.id)
-walls = RoomElement.create(name: "Walls", room_id: pool_room.id)
-floor = RoomElement.create(name: "Floor", room_id: pool_room.id)
+ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: pool_room.id)
+ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: green_room.id)
+ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: elbow_room.id)
+ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: boiler_room.id)
+floor = RoomElement.create(name: "Floor/floor coverings", room_id: breakout.id)
 
-ceiling = RoomElement.create(name: "Ceiling", room_id: green_room.id)
-walls = RoomElement.create(name: "Walls", room_id: green_room.id)
-floor = RoomElement.create(name: "Floor", room_id: green_room.id)
+light = RoomElement.create(name: "Light fittings", room_id: pool_room.id)
+light = RoomElement.create(name: "Light fittings", room_id: green_room.id)
+light = RoomElement.create(name: "Light fittings", room_id: elbow_room.id)
+light = RoomElement.create(name: "Light fittings", room_id: boiler_room.id)
 
-ceiling = RoomElement.create(name: "Ceiling", room_id: elbow_room.id)
-walls = RoomElement.create(name: "Walls", room_id: elbow_room.id)
-floor = RoomElement.create(name: "Floor", room_id: elbow_room.id)
 
-ceiling = RoomElement.create(name: "Ceiling", room_id: boiler_room.id)
-walls = RoomElement.create(name: "Walls", room_id: boiler_room.id)
-floor = RoomElement.create(name: "Floor", room_id: boiler_room.id)
-
-pooltable = RoomElement.create(name: "Pool Table", room_id: breakout.id)
-pingpongtable = RoomElement.create(name:"Ping Pong Table", room_id: breakout.id)
-couch = RoomElement.create(name: "Modular Couch", room_id: breakout.id)
-armchair = RoomElement.create(name: "Leather Arm Chair", room_id: breakout.id)
+pooltable = RoomElement.create(name: "Pool table", room_id: breakout.id)
+pingpongtable = RoomElement.create(name:"Ping pong table", room_id: breakout.id)
+couch = RoomElement.create(name: "Modular couch", room_id: breakout.id)
+armchair = RoomElement.create(name: "Leather arm chair", room_id: breakout.id)
 tv = RoomElement.create(name: "Television", room_id: breakout.id)
-tvstand = RoomElement.create(name: "Television Stand", room_id: breakout.id)
+tvstand = RoomElement.create(name: "Television stand", room_id: breakout.id)
 bar = RoomElement.create(name: "Bar", room_id: breakout.id)
-barfridge = RoomElement.create(name: "Bar Fridge", room_id: breakout.id)
+barfridge = RoomElement.create(name: "Bar fridge", room_id: breakout.id)
 
-frontdesk = RoomElement.create(name: "Front Desk", room_id: reception.id)
-couch1 = RoomElement.create(name: "Couch - Yellow", room_id: reception.id)
-couch2 = RoomElement.create(name: "Couch - Brown Leather ", room_id: reception.id)
-smltable = RoomElement.create(name: "Coffee Table", room_id: reception.id)
+frontdesk = RoomElement.create(name: "Front desk", room_id: reception.id)
+couch1 = RoomElement.create(name: "Couch - yellow", room_id: reception.id)
+couch2 = RoomElement.create(name: "Couch - brown leather ", room_id: reception.id)
+smltable = RoomElement.create(name: "Coffee table", room_id: reception.id)
 
-comfridge = RoomElement.create(name: "Double Fridge", room_id: kitchen.id)
+comfridge = RoomElement.create(name: "Double fridge", room_id: kitchen.id)
 fridge = RoomElement.create(name: "Fridge", room_id: kitchen.id)
-i9fridge = RoomElement.create(name: "i9 Staff Fridge", room_id: kitchen.id)
+i9fridge = RoomElement.create(name: "i9 Staff fridge", room_id: kitchen.id)
 bench = RoomElement.create(name: "Bench", room_id: kitchen.id)
 table = RoomElement.create(name: "Table", room_id: kitchen.id)
-hightable = RoomElement.create(name: "High Table", room_id: kitchen.id)
+hightable = RoomElement.create(name: "High table", room_id: kitchen.id)
 
 mtoilet = RoomElement.create(name: "Toilet - Male", room_id: bathroom.id)
 ftoilet = RoomElement.create(name: "Toilet - Female", room_id: bathroom.id)
@@ -148,9 +143,7 @@ comment = Comment.create(text_comment: "Gashes on the surface from knife being u
 comment.remote_photo_url = "https://images.unsplash.com/photo-1494801819652-1ca9fe13134c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41a38ea25d9615a1d36d7785ecff91bd&auto=format&fit=crop&w=634&q=80"
 comment.save
 
-comment = Comment.create(text_comment: "Cute dogs running around everywhere", room_element_id: frontdesk.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "clean")
-comment.remote_photo_url = "https://images.unsplash.com/photo-1494801819652-1ca9fe13134c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=41a38ea25d9615a1d36d7785ecff91bd&auto=format&fit=crop&w=634&q=80"
-comment.save
+
 
 puts "This is the end of this motherfucking seed file, snakes on a plane"
 
