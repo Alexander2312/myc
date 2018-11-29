@@ -15,7 +15,8 @@ class CommentsController < ApplicationController
     @comment.room_element = @room_element
     @comment.user_id = current_user.id
     @comment.condition_report = @condition_report
-
+    @comment.state = params[:comment][:state].reject { |value| value.blank? or value == "0" }.join(" ")
+    
     if @comment.save
       # ConfirmationMailer.confirm(@comment).deliver_now
       redirect_to edit_condition_report_path(@condition_report, anchor: "element-#{@room_element.id}")
@@ -28,6 +29,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:room_element_id, :condition_report_id, :text_comment, :state, :photo, )
+    params.require(:comment).permit(:room_element_id, :condition_report_id, :text_comment, :photo)
   end
 end
