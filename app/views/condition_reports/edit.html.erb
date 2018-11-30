@@ -25,28 +25,21 @@
             <div class="card-inner">
               <div class="card-body">
                 <div class="comments">
-                  <h3 class="comments-title">Comments</h3>
+                  <h3 class="comments-title"></h3>
                   <% if (element.comments.count == 0) %>
                     No comments yet.
                   <% end %>
                   <% element.comments.each do |comment| %>
                     <div class="comment">
-                      <div class="text-comment">
-                        <p><%= comment.text_comment %></p>
-                      </div>
-                    <ul class="state tags">
                       <% if comment.state? %>
-                        <% comment.state.split.each do |state| %>
-                          <li class="tag">
-                            <span><%= state %></span>
-                          </li>
-                        <% end %>
-                      <% else %>
-                        <li class="tag">
-                          <span>N/A</span>
-                        </li>
+                        <ul class="state tags">
+                          <% comment.state.split.each do |state| %>
+                            <li class="tag">
+                              <span><%= state %></span>
+                            </li>
+                          <% end %>
+                        </ul>
                       <% end %>
-                    </ul>
 
                       <% if comment.photo? %>
                         <div class="comment-image">
@@ -55,8 +48,11 @@
                           </a>
                         </div>
                         <% end %>
+                        <div class="text-comment">
+                          <p><%= comment.text_comment %></p>
+                        </div>
                     </div>
-                <% end %>
+                  <% end %>
                 </div>
               </div>
               <div class="card-footer">

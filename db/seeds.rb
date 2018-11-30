@@ -83,19 +83,20 @@ green_room = Room.create(name: "Green Room", property_id: property.id)
 elbow_room = Room.create(name: "Elbow Room", property_id: property.id)
 boiler_room = Room.create(name: "Boiler Room", property_id: property.id)
 
-ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: pool_room.id)
-ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: green_room.id)
-ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: elbow_room.id)
-ceiling = RoomElement.create(name: "Doors/wall/ceiling", room_id: boiler_room.id)
+ceiling1 = RoomElement.create(name: "Doors/wall/ceiling", room_id: pool_room.id)
+ceiling2 = RoomElement.create(name: "Doors/wall/ceiling", room_id: green_room.id)
+ceiling3 = RoomElement.create(name: "Doors/wall/ceiling", room_id: elbow_room.id)
+ceiling4 = RoomElement.create(name: "Doors/wall/ceiling", room_id: boiler_room.id)
 floor = RoomElement.create(name: "Floor/floor coverings", room_id: breakout.id)
 
-light = RoomElement.create(name: "Light fittings", room_id: pool_room.id)
-light = RoomElement.create(name: "Light fittings", room_id: green_room.id)
-light = RoomElement.create(name: "Light fittings", room_id: elbow_room.id)
-light = RoomElement.create(name: "Light fittings", room_id: boiler_room.id)
+light1 = RoomElement.create(name: "Light fittings", room_id: pool_room.id)
+light5 = RoomElement.create(name: "Light fittings", room_id: green_room.id)
+light3 = RoomElement.create(name: "Light fittings", room_id: elbow_room.id)
+light4 = RoomElement.create(name: "Light fittings", room_id: boiler_room.id)
 light2 = RoomElement.create(name: "Light fittings", room_id: breakout.id)
 
 elevator = RoomElement.create(name: "Elevator", room_id: breakout.id)
+wall = RoomElement.create(name: "Breakout/wall/ceiling", room_id: breakout.id)
 
 pooltable = RoomElement.create(name: "Pool table", room_id: breakout.id)
 pingpongtable = RoomElement.create(name:"Ping pong table", room_id: breakout.id)
@@ -105,7 +106,7 @@ tv = RoomElement.create(name: "TV and stand", room_id: breakout.id)
 # tvstand = RoomElement.create(name: "Television stand", room_id: breakout.id)
 barfridge = RoomElement.create(name: "Bar fridge", room_id: breakout.id)
 sink = RoomElement.create(name: "Sink", room_id: kitchen.id)
-desk = RoomElement.create(name: "Desk", room_id: breakout.id)
+desks = RoomElement.create(name: "Desks", room_id: breakout.id)
 
 
 frontdesk = RoomElement.create(name: "Front desk", room_id: reception.id)
@@ -127,20 +128,23 @@ ftoilet = RoomElement.create(name: "Toilet - Female", room_id: bathroom.id)
 comment = Comment.create(text_comment: "Brown leather arm chair x 2", room_element_id: armchair.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
-comment = Comment.create(text_comment: "Stainless steel", room_element_id: sink.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+
+comment = Comment.create(text_comment: "Stainless steel, dish rack full of dishes, glasses stacked 20 high", room_element_id: sink.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543530438/dish.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "White, melamine, fixed cube style, filled with tableware, missing forks and spoons", room_element_id: shelving.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment = Comment.create(text_comment: "White, melamine, fixed cube style, filled with tableware, missing forks and spoons", room_element_id: shelving.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
 comment.save
 
 comment = Comment.create(text_comment: "Panasonic, flat screen, black with wooden stand", room_element_id: tv.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473593/TV.jpg"
 comment.save
 
 comment = Comment.create(text_comment: "Comes with a friendly Community Manager", room_element_id: frontdesk.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878565/image4.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Paint peeling from the wall", room_element_id: ceiling.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
+comment = Comment.create(text_comment: "Paint peeling from the wall", room_element_id: wall.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032684/wall4.jpg"
 comment.save
 
@@ -148,24 +152,28 @@ comment = Comment.create(text_comment: "Material is worn with general wear and t
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543032802/couch-3.jpg"
 comment.save
 
-comment = Comment.create(text_comment: "Pool table, with cues and balls", room_element_id: pooltable.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
+comment = Comment.create(text_comment: "Pool table, with cues and balls", room_element_id: pooltable.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543395274/Pooltable.jpg"
 comment.save
 
 comment = Comment.create(text_comment: "Blue 'Killerspin' ping pong table, with balls and ping-pong paddles", room_element_id: pingpongtable.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473590/PingPong.jpg"
 comment.save
+
 
 comment = Comment.create(text_comment: "Mahogany wood, new condition, has 6 matching chairs", room_element_id: table.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543395272/Kitchen.jpg"
 comment.save
 
 comment = Comment.create(text_comment: "Bosch, stainless steel, model MJKLU8428 - note whiskey bottle fill levels", room_element_id: microwave.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543481887/microwave.jpg"
 comment.save
 
 comment = Comment.create(text_comment: "Bosch, white,  model JKLFUA81", room_element_id: fridge.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
-comment = Comment.create(text_comment: "Yellow couch, new condition", room_element_id: couch1.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment = Comment.create(text_comment: "Yellow couch, new condition. Dimensions: 200x90", room_element_id: couch1.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473587/Yellowcouch.jpg"
 comment.save
 
 comment = Comment.create(text_comment: "Bosch fridge, double glass door, white, model JMODFH8998", room_element_id: comfridge.id, condition_report_id: conditionreport2.id, user_id: jl.id)
@@ -180,16 +188,43 @@ comment.save
 comment = Comment.create(text_comment: "Polished timber floor, some scuff marks, generally good condition", room_element_id: floor.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
-comment = Comment.create(text_comment: "Wooden table top desks x 20", room_element_id: desk.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment = Comment.create(text_comment: "Wooden table top desks and chairs x 20", room_element_id: desks.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473584/Desksbreakout.jpg"
+comment.save
+
+
+comment = Comment.create(text_comment: "Tiny room with chairs, table and board.", room_element_id: ceiling2.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473586/green_room.jpg"
+comment.save
+
+comment = Comment.create(text_comment: "Circular couch, almost clean.", room_element_id: couch.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473590/Modular_couch.jpg"
+comment.save
+
+
+comment = Comment.create(text_comment: "Tiny room with chairs, table and board.", room_element_id: elbow_room.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473593/Elbow_room.jpg"
+comment.save
+
+comment = Comment.create(text_comment: "Elevator sometimes blocks half way down.", room_element_id: elevator.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473582/Elevator.jpg"
+comment.save
+
+comment = Comment.create(text_comment: "12 spotlights", room_element_id: light2.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473581/light.jpg"
+comment.save
+
+comment = Comment.create(text_comment: "Boiler room with a tv, a table and 15 chairs.", room_element_id: boiler_room.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543473581/Boiler_room.jpg"
+comment.save
+
+comment = Comment.create(text_comment: "Well working coffee machine", room_element_id: coffee.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543481884/coffeeJPG.jpg"
+comment.save
+
+comment = Comment.create(text_comment: "Double fridge. Thomson. Dimensions: 200x 120", room_element_id: comfridge.id, condition_report_id: conditionreport2.id, user_id: jl.id)
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543481877/dfridge.jpg"
 comment.save
 
 puts "This is the end of this motherfucking seed file, snakes on a plane"
-
-
-
-
-
-
-
-
 
