@@ -141,7 +141,7 @@ comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1
 comment.save
 
 comment = Comment.create(text_comment: "Comes with a friendly Community Manager", room_element_id: frontdesk.id, condition_report_id: conditionreport2.id, user_id: jl.id)
-comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1542878565/image4.jpg"
+comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543536930/frontdesk.jpg"
 comment.save
 
 comment = Comment.create(text_comment: "Paint peeling from the wall", room_element_id: wall.id, condition_report_id: conditionreport2.id, user_id: jl.id, state: "Damaged")
