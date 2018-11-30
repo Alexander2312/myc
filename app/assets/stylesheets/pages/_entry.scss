@@ -44,6 +44,17 @@ a:active {
 	text-decoration: none; color:white;
 }
 
+
 a:visited {
 	text-decoration: none; color:white;
 }
+
+a:-webkit-any-link {
+	text-decoration: none !important;
+}
+
+a:hover,
+a.selected {
+	color: white;
+}
+
