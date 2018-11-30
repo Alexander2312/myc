@@ -29,6 +29,15 @@
 
 
 }
+a.entry-page-card {
+  &:active,
+  &:focus {
+    color: #ddd;
+    &:visited {
+      color: #ddd;
+    }
+  }
+}
 .entry-page-card-icon {
 	width: 30px;
 }
