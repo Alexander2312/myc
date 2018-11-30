@@ -128,6 +128,7 @@ ftoilet = RoomElement.create(name: "Toilet - Female", room_id: bathroom.id)
 comment = Comment.create(text_comment: "Brown leather arm chair x 2", room_element_id: armchair.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.save
 
+
 comment = Comment.create(text_comment: "Stainless steel, dish rack full of dishes, glasses stacked 20 high", room_element_id: sink.id, condition_report_id: conditionreport2.id, user_id: jl.id)
 comment.remote_photo_url = "https://res.cloudinary.com/drppmfpas/image/upload/v1543530438/dish.jpg"
 comment.save
